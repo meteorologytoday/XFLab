@@ -5,8 +5,11 @@
 namespace X {
 
 
-    inline x_size OFFSET2(x_size rows, x_size cols, x_size i, x_size j);
- 
+    inline xsize OFFSET2(xsize rows, xsize cols, xsize i, xsize j) {
+        return i * cols + j;
+    }
+
+
 
 }
 

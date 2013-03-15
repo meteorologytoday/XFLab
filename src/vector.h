@@ -5,7 +5,7 @@
 #define X_VECTOR_H
 namespace X {
 
-    template <typename T, x_size N>
+    template <typename T, xsize N>
         class Vector : public Matrix<T,1,N> {
             public:
                 Vector(); 

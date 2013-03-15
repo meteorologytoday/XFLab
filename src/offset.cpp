@@ -4,10 +4,6 @@
 
 namespace X {
 
-    x_size OFFSET2(x_size rows, x_size cols, x_size i, x_size j) {
-        return i * cols + j;
-    }
-
 
 }
 

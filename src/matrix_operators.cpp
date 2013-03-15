@@ -10,16 +10,16 @@ using namespace std;
 namespace X {
     // Operator overloading
 
-    template <typename T, x_size ROWS, x_size COLS>
-        T& Matrix<T,ROWS,COLS>::operator()(x_size i) {
+    template <typename T, xsize ROWS, xsize COLS>
+        T& Matrix<T,ROWS,COLS>::operator()(xsize i) {
             return data[i]; 
         }
-    template <typename T,x_size ROWS, x_size COLS>
-        T& Matrix<T,ROWS,COLS>::operator()(x_size i, x_size j) {
+    template <typename T,xsize ROWS, xsize COLS>
+        T& Matrix<T,ROWS,COLS>::operator()(xsize i, xsize j) {
             return data[OFFSET2(ROWS,COLS,i,j)]; 
         }
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::operator<<(T value) {
             data[offset] = value;
 
@@ -31,13 +31,13 @@ namespace X {
             return *this;
         }
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::operator=(Matrix<T,ROWS,COLS>& mtxB) { 
-            copyFrom(mtxB);
+            this->copyFrom(mtxB);
             return *this;
         }
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::operator,(T value) {
             if(offset >= this->getElms()) {
                 resetOffset();
@@ -49,68 +49,68 @@ namespace X {
         }
 
     // Add by matrix
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::addBy(Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] += (mtxB.getPtr())[i];
                 }
             return *this;
         }
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::subBy(Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] -= (mtxB.getPtr())[i];
                 }
             return *this;
         }
 
-     template <typename T,x_size ROWS, x_size COLS>
+     template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::mulBy(Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] *= (mtxB.getPtr())[i];
                 }
             return *this;
             }
 
 
-     template <typename T,x_size ROWS, x_size COLS>
+     template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::divBy(Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] /= (mtxB.getPtr())[i];
                 }
             return *this;
         }
 
     // Add by val
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::addBy(T val) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] += val;
                 }
             return *this;
         }
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::subBy(T val) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] -= val;
                 }
             return *this;
         }
 
-     template <typename T,x_size ROWS, x_size COLS>
+     template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::mulBy(T val) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] *= val;
                 }
             return *this;
         }
 
 
-     template <typename T,x_size ROWS, x_size COLS>
+     template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::divBy(T val) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] /= val;
                 }
             return *this;
@@ -118,36 +118,36 @@ namespace X {
 
 
     // add of 2 matrices
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::addOf(Matrix<T,ROWS,COLS>& mtxA, Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = (mtxA.getPtr())[i] + (mtxB.getPtr())[i];
                 }
             return *this;
         }
 
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::subOf(Matrix<T,ROWS,COLS>& mtxA, Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = (mtxA.getPtr())[i] - (mtxB.getPtr())[i];
                 }
             return *this;
         }
 
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::mulOf(Matrix<T,ROWS,COLS>& mtxA, Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = (mtxA.getPtr())[i] * (mtxB.getPtr())[i];
                 }
             return *this;
         }
 
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::divOf(Matrix<T,ROWS,COLS>& mtxA, Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = (mtxA.getPtr())[i] / (mtxB.getPtr())[i];
                 }
             return *this;
@@ -155,36 +155,36 @@ namespace X {
 
 
     // add of val and matrix
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::addOf(T valA, Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = valA + (mtxB.getPtr())[i];
                 }
             return *this;
         }
 
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::subOf(T valA, Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = valA - (mtxB.getPtr())[i];
                 }
             return *this;
         }
 
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::mulOf(T valA, Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = valA * (mtxB.getPtr())[i];
                 }
             return *this;
         }
 
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::divOf(T valA, Matrix<T,ROWS,COLS>& mtxB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = valA / (mtxB.getPtr())[i];
                 }
             return *this;
@@ -192,33 +192,33 @@ namespace X {
 
 
     // add of matrix and val
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::addOf(Matrix<T,ROWS,COLS>& mtxA, T valB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = (mtxA.getPtr())[i] + valB;
                 }
             return *this;
         }
 
-      template <typename T,x_size ROWS, x_size COLS>
+      template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::subOf(Matrix<T,ROWS,COLS>& mtxA, T valB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = (mtxA.getPtr())[i] - valB;
                 }
             return *this;
         }
 
-   template <typename T,x_size ROWS, x_size COLS>
+   template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::mulOf(Matrix<T,ROWS,COLS>& mtxA, T valB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = (mtxA.getPtr())[i] * valB;
                 }
             return *this;
         }
 
-   template <typename T,x_size ROWS, x_size COLS>
+   template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& Matrix<T,ROWS,COLS>::divOf(Matrix<T,ROWS,COLS>& mtxA, T valB) {
-                for(x_size i = 0; i < this->getElms(); ++i) {
+                for(xsize i = 0; i < this->getElms(); ++i) {
                     (this->getPtr())[i] = (mtxA.getPtr())[i] / valB;
                 }
             return *this;
@@ -227,12 +227,12 @@ namespace X {
 
 /*
     // Addition
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& operator+=(Matrix<T,ROWS,COLS>& lhs, Matrix<T,ROWS,COLS>& rhs) {
             if(lhs.match(rhs)) {
                 T *lhs_data = lhs.getPtr();
                 T *rhs_data = rhs.getPtr();
-                for(x_size i = 0; i < lhs.getElms(); ++i) {
+                for(xsize i = 0; i < lhs.getElms(); ++i) {
                     lhs_data[i] += rhs_data[i];
                 }
             } else {
@@ -245,14 +245,14 @@ namespace X {
     template <typename T, typename S>
         Matrix<T,ROWS,COLS>& operator+=(Matrix<T,ROWS,COLS>& lhs, S rhs) {
             T *lhs_data = lhs.getPtr();
-            for(x_size i = 0; i < lhs.getElms(); ++i) {
+            for(xsize i = 0; i < lhs.getElms(); ++i) {
                 lhs_data[i] += (T)rhs;
             }
             return lhs;
         }
 
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& operator+(Matrix<T,ROWS,COLS>& lhs, Matrix<T,ROWS,COLS>& rhs) {
             if(lhs.isTmp()) {
                 return lhs += rhs;
@@ -293,12 +293,12 @@ namespace X {
 
 
     // Substraction
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& operator-=(Matrix<T,ROWS,COLS>& lhs, Matrix<T,ROWS,COLS>& rhs) {
             if(lhs.match(rhs)) {
                 T *lhs_data = lhs.getPtr();
                 T *rhs_data = rhs.getPtr();
-                for(x_size i = 0; i < lhs.getElms(); ++i) {
+                for(xsize i = 0; i < lhs.getElms(); ++i) {
                     lhs_data[i] -= rhs_data[i];
                 }
             } else {
@@ -311,13 +311,13 @@ namespace X {
     template <typename T, typename S>
         Matrix<T,ROWS,COLS>& operator-=(Matrix<T,ROWS,COLS>& lhs, S rhs) {
             T *lhs_data = lhs.getPtr();
-            for(x_size i = 0; i < lhs.getElms(); ++i) {
+            for(xsize i = 0; i < lhs.getElms(); ++i) {
                 lhs_data[i] -= (T)rhs;
             }
             return lhs;
         }
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& operator-(Matrix<T,ROWS,COLS>& mtx) {
             Matrix<T,ROWS,COLS> *mtxp;
             if(mtx.isTmp()) {
@@ -331,7 +331,7 @@ namespace X {
             return *mtxp;
         }
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& operator-(Matrix<T,ROWS,COLS>& lhs, Matrix<T,ROWS,COLS>& rhs) {
             if(lhs.isTmp()) {
                 return lhs -= rhs;
@@ -372,12 +372,12 @@ namespace X {
 
 
     // Multiplication
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& operator*=(Matrix<T,ROWS,COLS>& lhs, Matrix<T,ROWS,COLS>& rhs) {
             if(lhs.match(rhs)) {
                 T *lhs_data = lhs.getPtr();
                 T *rhs_data = rhs.getPtr();
-                for(x_size i = 0; i < lhs.getElms(); ++i) {
+                for(xsize i = 0; i < lhs.getElms(); ++i) {
                     lhs_data[i] *= rhs_data[i];
                 }
             } else {
@@ -390,14 +390,14 @@ namespace X {
     template <typename T, typename S>
         Matrix<T,ROWS,COLS>& operator*=(Matrix<T,ROWS,COLS>& lhs, S rhs) {
             T *lhs_data = lhs.getPtr();
-            for(x_size i = 0; i < lhs.getElms(); ++i) {
+            for(xsize i = 0; i < lhs.getElms(); ++i) {
                 lhs_data[i] *= (T)rhs;
             }
             return lhs;
         }
 
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& operator*(Matrix<T,ROWS,COLS>& lhs, Matrix<T,ROWS,COLS>& rhs) {
             if(lhs.isTmp()) {
                 return lhs *= rhs;
@@ -438,12 +438,12 @@ namespace X {
 
 
     // Division
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& operator/=(Matrix<T,ROWS,COLS>& lhs, Matrix<T,ROWS,COLS>& rhs) {
             if(lhs.match(rhs)) {
                 T *lhs_data = lhs.getPtr();
                 T *rhs_data = rhs.getPtr();
-                for(x_size i = 0; i < lhs.getElms(); ++i) {
+                for(xsize i = 0; i < lhs.getElms(); ++i) {
                     lhs_data[i] /= rhs_data[i];
                 }
             } else {
@@ -456,14 +456,14 @@ namespace X {
     template <typename T, typename S>
         Matrix<T,ROWS,COLS>& operator/=(Matrix<T,ROWS,COLS>& lhs, S rhs) {
             T *lhs_data = lhs.getPtr();
-            for(x_size i = 0; i < lhs.getElms(); ++i) {
+            for(xsize i = 0; i < lhs.getElms(); ++i) {
                 lhs_data[i] /= (T)rhs;
             }
             return lhs;
         }
 
 
-    template <typename T,x_size ROWS, x_size COLS>
+    template <typename T,xsize ROWS, xsize COLS>
         Matrix<T,ROWS,COLS>& operator/(Matrix<T,ROWS,COLS>& lhs, Matrix<T,ROWS,COLS>& rhs) {
             if(lhs.isTmp()) {
                 return lhs /= rhs;

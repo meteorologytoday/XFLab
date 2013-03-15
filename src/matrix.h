@@ -10,11 +10,11 @@
 using namespace std;
 namespace X {
 
-    template <typename T, x_size ROWS, x_size COLS>
+    template <typename T, xsize ROWS, xsize COLS>
         class Matrix {
             private:
                 T *data;
-                x_size offset;
+                xsize offset;
                 bool manage_memory;
             public:
                 Matrix(); 
@@ -35,8 +35,11 @@ namespace X {
 
 
             public: // getter and setters
-                inline x_size getElms() const {return ROWS*COLS;}
+                inline xsize getElms() const {return ROWS*COLS;}
+                inline xsize getRows() const {return ROWS;}
+                inline xsize getCols() const {return COLS;}
                 inline T* getPtr() const { return this->data; }
+           
 
             public:
                 Matrix<T,ROWS,COLS>& addBy(Matrix<T,ROWS,COLS>&);
@@ -66,13 +69,13 @@ namespace X {
 
             public:
                 inline void resetOffset() {this->offset = 0;}
-                inline void setOffset(x_size offset) { this->offset = offset;}
-                inline x_size getOffset() const {return this->offset;}
+                inline void setOffset(xsize offset) { this->offset = offset;}
+                inline xsize getOffset() const {return this->offset;}
             
             public: // operators overloading
                 Matrix<T,ROWS,COLS>& operator=(Matrix<T,ROWS,COLS>&);
-                T& operator()(x_size);
-                T& operator()(x_size, x_size);
+                T& operator()(xsize);
+                T& operator()(xsize, xsize);
                 Matrix<T,ROWS,COLS>& operator<<(T);
                 Matrix<T,ROWS,COLS>& operator,(T);
         };
@@ -81,6 +84,5 @@ namespace X {
 
 #include "matrix.cpp"
 #include "matrix_operators.cpp"
-#include "matrix_iterators.cpp"
 
 #endif

@@ -1,20 +1,22 @@
 #ifndef X_TYPEDEF_H
 #define X_TYPEDEF_H
 
+#ifndef NULL
+#define NULL 0
+#endif
+
 namespace X {
 
-
     // Define real number type
-    typedef unsigned int x_size;
-    typedef float realf;
-    typedef double reald;
-    typedef int reali;
-    typedef short reals;
+    typedef unsigned int xsize;
+    typedef float xrealf;
+    typedef double xreald;
+    typedef int xreali;
+    typedef short xreals;
 
     // Define complex number type
-    typedef double complexd[2];
-    typedef float  complexf[2];
-
+    typedef double xcomplexd[2];
+    typedef float  xcomplexf[2];
 
 
 }

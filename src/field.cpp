@@ -5,60 +5,73 @@
 namespace X {
 
 
-    template <typename T, x_size D, x_size P, x_size N>
+    template <typename T, xsize D, xsize P, xsize N>
         void Field<T,D,P,N>::DefaultConstructor() {
-
-            grid = new Grid<T,D,P>();
-
-            raw_data = new T[P]();
-
+            grid = NULL;
+            raw_data = new T[P*N]();
             vec = new Vector<T,P>*[N]();
-            for(x_size i=0; i < N; ++i) {
-                vec[i] = new Vector<T,P>(i*P);
+            
+            for(xsize i=0; i < N; ++i) {
+                vec[i] = new Vector<T,P>(raw_data + i*P);
             }
 
         }
 
-    template <typename T, x_size D, x_size P, x_size N>
+    template <typename T, xsize D, xsize P, xsize N>
         Field<T,D,P,N>::Field() {
             this->DefaultConstructor();
         }
 
-    template <typename T, x_size D, x_size P, x_size N>
-        Field<T,D,P,N>::Field(Grid<T,D,P>& grid) {
+    template <typename T, xsize D, xsize P, xsize N>
+        Field<T,D,P,N>::Field(Matrix<T,D,P>& grid) {
             this->DefaultConstructor();
-            this->setGrid(grid);
+            this->setMatrix(grid);
         }
 
    
     // Operator part
 
-    template <typename T, x_size D, x_size P, x_size N>
+    template <typename T, xsize D, xsize P, xsize N>
         Field<T,D,P,N>::~Field() {
 
-            for(x_size i=0; i < N; ++i) {
+            for(xsize i=0; i < N; ++i) {
                 delete vec[i];
             }
-            delete [] vec;
+            delete [] this->vec;
             delete [] this->raw_data;
-            delete this->grid;
+            if(this->grid != NULL) { delete this->grid; this->grid = NULL;}
 
         }
 
-    template <typename T, x_size D, x_size P, x_size N>
-       void Field<T,D,P,N>::setGrid(Grid<T,D,P>& grid) {
+    template <typename T, xsize D, xsize P, xsize N>
+       void Field<T,D,P,N>::setMatrix(Grid<T,D,P>& grid) {
+           if(this->grid == NULL) 
+               this->grid = new Matrix<T,D,P>();
+
            this->grid->copyFrom(grid);
         }
-    
-    template <typename T, x_size D, x_size P, x_size N>
-        Vector<T,P>& Field<T,D,P,N>::operator[](x_size i) {
+ 
+    template <typename T, xsize D, xsize P, xsize N>
+       Matrix<T,D,P>* Field<T,D,P,N>::getGrid() {
+           if(this->grid == NULL) 
+               this->grid = new Matrix<T,D,P>();
+
+           return this->grid;
+        }   
+
+    template <typename T, xsize D, xsize P, xsize N>
+        Vector<T,P>& Field<T,D,P,N>::operator[](xsize i) {
             return *vec[i];
         }
 
-    template <typename T, x_size D, x_size P, x_size N>
-        T& Field<T,D,P,N>::operator()(x_size i, x_size offset) {
+    template <typename T, xsize D, xsize P, xsize N>
+        T& Field<T,D,P,N>::operator()(xsize i, xsize offset) {
             return vec[i]->operator()(0,offset);
         }
+
+
+
+
 
 }
 

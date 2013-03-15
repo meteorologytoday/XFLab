@@ -1,25 +1,25 @@
 
 // basic
 #include "typedef.h"
-#include "complex.h"
+#include "xcomplex.h"
 #include "offset.h"
 #include "matrix.h"
 #include "vector.h"
-#include "grid.h"
 #include "field.h"
 #include "util.h"
+#include "enumerator.h"
 
-#ifdef X_INCLUDE_IOSTREAM
-#include "basic_iostream.h"
+#ifdef X_INCLUDE_IO
+#include "basic_io.h"
 #endif
 
 #ifdef X_INCLUDE_DIM2
 // dimension 2 expansion
-#include "grid2.h"
-#include "field2.h"
+#include "field2d.h"
+#include "field2dmeshgrid.h"
 
-#ifdef X_INCLUDE_IOSTREAM
-#include "dim2_iostream.h"
+#ifdef X_INCLUDE_IO
+#include "dim2_io.h"
 #endif
 
 #endif
@@ -27,4 +27,9 @@
 #ifdef X_INCLUDE_FFTW
 // fftw expansion
 #include "fftw_magic.h"
+#endif
+
+#ifdef X_INCLUDE_GNUPLOT
+// gnuplot expansion
+#include "gnuplot_magic.h"
 #endif
