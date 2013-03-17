@@ -2,7 +2,6 @@
 #include "offset.h"
 #include "matrix.h"
 #include "vector.h"
-#include "grid.h"
 #include "field.h"
 
 #include <iostream>

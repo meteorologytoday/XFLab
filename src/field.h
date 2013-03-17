@@ -1,6 +1,5 @@
 #include "typedef.h"
 #include "vector.h"
-#include "grid.h"
 
 #ifndef X_FIELD_H
 #define X_FIELD_H
@@ -25,7 +24,7 @@ namespace X {
 
 
             public:
-                void setMatrix(Grid<T,D,P>& grid);
+                void setGrid(Matrix<T,D,P>& grid);
                 Matrix<T,D,P>* getGrid();
 
             public: // operators overloading

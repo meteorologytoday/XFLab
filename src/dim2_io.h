@@ -3,11 +3,11 @@
 #define X_DIM2_IO_H
 
 #include "typedef.h"
-#include "field2.h"
+#include "field2d.h"
 #include <iostream>
 
-template<typename T, X::xsize P1, X::xsize P2, X::xsize N>
-std::ostream& operator<<(std::ostream& out, X::Field2<T,P1,P2,N>& field);
+template<typename T, X::xsize P, X::xsize N>
+std::ostream& operator<<(std::ostream& out, X::Field2D<T,P,N>& field);
 
 
 #include "dim2_io.cpp"

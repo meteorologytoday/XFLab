@@ -16,7 +16,7 @@
 #ifdef X_INCLUDE_DIM2
 // dimension 2 expansion
 #include "field2d.h"
-#include "field2dmeshgrid.h"
+#include "field2dindex2.h"
 
 #ifdef X_INCLUDE_IO
 #include "dim2_io.h"

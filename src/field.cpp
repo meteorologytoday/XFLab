@@ -44,7 +44,7 @@ namespace X {
         }
 
     template <typename T, xsize D, xsize P, xsize N>
-       void Field<T,D,P,N>::setMatrix(Grid<T,D,P>& grid) {
+       void Field<T,D,P,N>::setGrid(Matrix<T,D,P>& grid) {
            if(this->grid == NULL) 
                this->grid = new Matrix<T,D,P>();
 
