@@ -1,36 +1,25 @@
 #include "typedef.h"
 #include "vector.h"
+#include "index_1.h"
 
 #ifndef X_FIELD_H
 #define X_FIELD_H
 
 namespace X {
-
-    // T : data precision
-    // N : number of data
-    // P : points of field
-    template <typename T, xsize D, xsize P, xsize N>
-        class Field {
+    
+    template <typename DT, typename GT, xsize P, xsize N>
+        class Field : Index1<DT,P> {
             private:
-                Matrix<T,D,P> *grid;
-                T *raw_data;
-                Vector<T,P>   **vec;
+                GT  *grid;
+                DT **data;
 
             public:
-                void DefaultConstructor();
                 Field();
-                Field(Matrix<T,D,P>&);
                 ~Field();
 
 
             public:
-                void setGrid(Matrix<T,D,P>& grid);
-                Matrix<T,D,P>* getGrid();
-
-            public: // operators overloading
-
-                Vector<T,P>& operator[](xsize i);
-                T& operator()(xsize n, xsize p);
+                inline GT * getGrid() { return this->grid; }
         };
 
 }

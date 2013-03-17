@@ -3,12 +3,15 @@
 #include "typedef.h"
 #include "xcomplex.h"
 #include "offset.h"
-#include "matrix.h"
-#include "vector.h"
+//#include "matrix.h"
+//#include "vector.h"
 #include "field.h"
 #include "util.h"
 #include "enumerator.h"
+#include "data_index_1.h"
+#include "data_index_2.h"
 
+/*
 #ifdef X_INCLUDE_IO
 #include "basic_io.h"
 #endif
@@ -33,3 +36,5 @@
 // gnuplot expansion
 #include "gnuplot_magic.h"
 #endif
+
+*/

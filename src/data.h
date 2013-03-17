@@ -12,7 +12,8 @@ namespace X {
                 Data(T*);      // initialize by an pre-defined array
                 ~Data();
 
-                inline T * getData() {return data;}
+                inline virtual void setData(Data&) {  }
+                inline virtual Data& getData() { return data; }
 
 
         };

@@ -1,6 +1,6 @@
 
-#ifndef X_INDEX_H
-#define X_INDEX_H
+#ifndef X_INDEX_2_H
+#define X_INDEX_2_H
 
 #include "index.h"
 #include "typedef.h"
@@ -17,7 +17,7 @@ namespace X {
                 ~Index2() {}
             
             public:
-                virtual inline T& operator()(xsize i, xsize j) {
+                inline T& operator()(xsize i, xsize j) {
                     return data[OFFSET2(N1,N2,i,j)];
                 }
         };

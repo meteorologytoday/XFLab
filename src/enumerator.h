@@ -3,7 +3,7 @@
 
 namespace X {
 
-    template <typename T, xsize P1>
+    template <xsize P1>
         class Enumerator1 {
 
             public: // iterator
@@ -15,9 +15,8 @@ namespace X {
 
         };
 
-    template <typename T, xsize P1, xsize P2>
+    template <xsize P1, xsize P2>
         class Enumerator2 {
-
             public: // iterator
                 template <typename Fn> void each_index(Fn f) const {
                     for(xsize i = 0 ; i < P1; ++i) {
@@ -26,7 +25,6 @@ namespace X {
                         }
                     }
                 }
-
         };
 }
 
