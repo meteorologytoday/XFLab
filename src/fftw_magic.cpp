@@ -43,7 +43,7 @@ namespace X {
 
                 if(dir == 0) { // dimension 0
                     for(xsize i = 0; i < D0 ; ++i) {
-                        factor = pow(((M_PII * mapWavenumber(D0,i)) / L0) , static_cast<FFTW_REAL>(order));
+                        factor = pow(((M_PII * fftw_map_wavenumber(D0,i)) / L0) , static_cast<FFTW_REAL>(order));
                         for(xsize j = 0; j < D1; ++j) {
 
                             offset = OFFSET2(D0,D1,i,j);
@@ -56,7 +56,7 @@ namespace X {
                 } else if(dir == 1) { // dimension 1
                     for(xsize i = 0; i < D0 ; ++i) {
                         for(xsize j = 0; j < D1; ++j) {
-                            factor = pow(((M_PII * mapWavenumber(D1,j)) / L1) , static_cast<FFTW_REAL>(order));
+                            factor = pow(((M_PII * fftw_map_wavenumber(D1,j)) / L1) , static_cast<FFTW_REAL>(order));
                             offset = OFFSET2(D0,D1,i,j);
                             fftw_ccmul(out[offset], in[offset], complex_indicator);
                             fftw_rcmul(out[offset], factor, out[offset]);
@@ -84,8 +84,8 @@ namespace X {
                     for(xsize j = 0; j < D1; ++j) {
                         factor = 0;
                         offset = OFFSET2(D0,D1,i,j);
-                        wavenumber_k = mapWavenumber(D0,i);
-                        wavenumber_l = mapWavenumber(D1,j);
+                        wavenumber_k = fftw_map_wavenumber(D0,i);
+                        wavenumber_l = fftw_map_wavenumber(D1,j);
                         
                         if(wavenumber_k == 0 && wavenumber_l == 0) {
                             out[offset][0] = 0;
@@ -116,8 +116,8 @@ namespace X {
                     for(xsize j = 0; j < D1; ++j) {
                         factor = 0;
                         offset = OFFSET2(D0,D1,i,j);
-                        wavenumber_k = mapWavenumber(D0,i);
-                        wavenumber_l = mapWavenumber(D1,j);
+                        wavenumber_k = fftw_map_wavenumber(D0,i);
+                        wavenumber_l = fftw_map_wavenumber(D1,j);
                         
                         factor =  - (pow(M_PII * wavenumber_k / L0, 2) + pow(M_PII * wavenumber_l / L1, 2));
 

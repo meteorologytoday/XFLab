@@ -6,6 +6,7 @@
 //#include "matrix.h"
 //#include "vector.h"
 #include "field.h"
+#include "dataset.h"
 #include "util.h"
 #include "enumerator.h"
 #include "data_index_1.h"
@@ -26,7 +27,7 @@
 #endif
 
 #endif
-
+*/
 #ifdef X_INCLUDE_FFTW
 // fftw expansion
 #include "fftw_magic.h"
@@ -37,4 +38,4 @@
 #include "gnuplot_magic.h"
 #endif
 
-*/
+

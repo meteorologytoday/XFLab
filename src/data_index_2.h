@@ -17,7 +17,11 @@ namespace X {
                 DataIndex2();
                 DataIndex2(T*);
                 ~DataIndex2();
-            
+    
+                using Data<T,N1*N2>::operator+=;
+                using Data<T,N1*N2>::operator-=;
+                using Data<T,N1*N2>::operator*=;
+                using Data<T,N1*N2>::operator/=;
                 using Index2<T,N1,N2>::operator();
         };
 

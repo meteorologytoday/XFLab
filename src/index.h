@@ -3,7 +3,11 @@
 namespace X {
     template <typename T>
         class Index {
-
+            private:
+            T* data;
+            public:
+            inline T* getTargetDataPointer() {return this->data;} 
+            inline void setTargetDataPointer(T* data) {this->data = data;}
         };
 }
 

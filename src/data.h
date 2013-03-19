@@ -12,10 +12,21 @@ namespace X {
                 Data(T*);      // initialize by an pre-defined array
                 ~Data();
 
-                inline virtual void setData(Data&) {  }
-                inline virtual Data& getData() { return data; }
+                inline T* getDataPointer() { return this->data; }
+                inline T* p() { return this->getDataPointer(); }
+                inline T& getData(xsize i) { return this->data[i]; }
+                inline xsize getSize() { return this->N; }
+                inline void copyData(Data<T,N>& data) { for(xsize i=0; i < N; ++i) (this->getData(i)) = data.getData(i); }
 
-
+            public:
+                inline void operator+=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] += (B.getDataPointer())[i]; }
+                template <typename B> inline void operator+=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] += static_cast<T>(b); } 
+                inline void operator-=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] -= (B.getDataPointer())[i]; }
+                template <typename B> inline void operator-=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] -= static_cast<T>(b); } 
+                inline void operator*=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] *= (B.getDataPointer())[i]; }
+                template <typename B> inline void operator*=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] *= static_cast<T>(b); } 
+                inline void operator/=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] /= (B.getDataPointer())[i]; }
+                template <typename B> inline void operator/=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] /= static_cast<T>(b); } 
         };
 }
 

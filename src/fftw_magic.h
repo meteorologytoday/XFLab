@@ -35,14 +35,14 @@ namespace X {
     namespace FFTW {
 
        // inline functions 
-        inline void* fftw_malloc_wave_table(xsize D0, xsize D1) { return FFTW(malloc)(sizeof(FFTW_COMPLEX) * D0 * ((xsize) (D1/2)+1)); }
-        constexpr inline xsize fftw_wave_table_size(xsize D0, xsize D1) { return  D0 * ((xsize) (D1/2)+1); }
+        inline void* fftw_malloc_wave_table(xsize D0, xsize D1) { return FFTW(malloc)(sizeof(FFTW_COMPLEX) * D0 * (xsize)((D1/2) + 1)); }
+        constexpr inline xsize fftw_wave_table_size(xsize dir, xsize D0, xsize D1) { return  (dir == 0) ? D0 : (xsize) (D1/2)+1; }
         inline void setComplex(FFTW_COMPLEX& x, FFTW_REAL a, FFTW_REAL b) {x[0] = a; x[1] = b;}
         inline void setComplex(FFTW_COMPLEX& x, FFTW_COMPLEX& y) {x[0] = y[0]; x[1] = y[1];}
 
         // for even , kreal = -Nx/2 + (k - Nx/2) = -Nx + k 
         // for odd  , kreal = -(Nx-1)/2 + k - ((Nx-1)/2 + 1) = -Nx + k
-        inline FFTW_REAL mapWavenumber(xsize dim, xsize i) { return (i <= (xsize)(dim/2)) ? static_cast<FFTW_REAL>(i) : static_cast<FFTW_REAL>(i) - dim ; }
+        inline FFTW_REAL fftw_map_wavenumber(xsize dim, xsize i) { return (i <= (xsize)(dim/2)) ? static_cast<FFTW_REAL>(i) : static_cast<FFTW_REAL>(i) - dim ; }
 
 
 

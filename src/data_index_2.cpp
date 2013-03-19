@@ -5,12 +5,12 @@
 namespace X {
 
     template <typename T, xsize N1, xsize N2>
-        DataIndex2<T,N1,N2>::DataIndex2() : Data<T,N1*N2>(), Index2<T,N1,N2>(this->getData()) {
+        DataIndex2<T,N1,N2>::DataIndex2() : Data<T,N1*N2>(), Index2<T,N1,N2>(this->getDataPointer()) {
             
         }
  
     template <typename T, xsize N1, xsize N2>
-        DataIndex2<T,N1,N2>::DataIndex2(T* data) : Data<T,N1*N2>(data), Index2<T,N1,N2>(this->getData()) {
+        DataIndex2<T,N1,N2>::DataIndex2(T* data) : Data<T,N1*N2>(data), Index2<T,N1,N2>(this->getDataPointer()) {
         }
 
     template <typename T, xsize N1, xsize N2>

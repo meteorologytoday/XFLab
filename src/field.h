@@ -1,6 +1,5 @@
 #include "typedef.h"
-#include "vector.h"
-#include "index_1.h"
+#include "dataset.h"
 
 #ifndef X_FIELD_H
 #define X_FIELD_H
@@ -8,10 +7,9 @@
 namespace X {
     
     template <typename DT, typename GT, xsize P, xsize N>
-        class Field : Index1<DT,P> {
+        class Field : public Dataset<DT,N> {
             private:
-                GT  *grid;
-                DT **data;
+                GT *grid;
 
             public:
                 Field();
@@ -19,7 +17,8 @@ namespace X {
 
 
             public:
-                inline GT * getGrid() { return this->grid; }
+                inline GT& getGrid() { return *(this->grid); }
+                using Dataset<DT,N>::operator[];
         };
 
 }
