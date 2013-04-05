@@ -12,11 +12,10 @@
 #include "data_index_1.h"
 #include "data_index_2.h"
 
-/*
 #ifdef X_INCLUDE_IO
-#include "basic_io.h"
+#include "io.h"
 #endif
-
+/*
 #ifdef X_INCLUDE_DIM2
 // dimension 2 expansion
 #include "field2d.h"
@@ -38,4 +37,7 @@
 #include "gnuplot_magic.h"
 #endif
 
-
+#ifdef X_INCLUDE_EDC
+// effectiv diffusivity coefficient tool
+#include "edc.cpp"
+#endif
