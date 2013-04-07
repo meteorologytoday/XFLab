@@ -36,7 +36,7 @@ namespace X {
 
                         if(j==0) 
                         dy = (y(1) - y(0)) / 2;
-                        else if(i == D1-1)
+                        else if(j == D1-1)
                         dy = (y(D1-1) - y(D1-2)) / 2;
                         else
                         dy = (y(j+1) - y(j-1)) / 2;
@@ -91,25 +91,28 @@ namespace X {
                     dIdC(static_cast<xsize>(grid_input(i,j))) += grad_square(i,j) * dA(i,j) * kappa;
                 });
 
+                
+                cout << "Integrating area... " << flush;
                 // integrate area
-                for(xsize i = LEVS-1; i > 0; --i) {
-                    if(i == LEVS -1) {
-                        AC(i) = 0;
+                for(xsize i = 0; i < LEVS; ++i) {
+                    xsize j = LEVS - i - 1;
+                    if(j == LEVS - 1) {
+                        AC(j) = 0;
                     } else {
-                        AC(i) = AC(i+1) + dAdC(i);
+                        AC(j) = AC(j+1) + dAdC(j);
                     }
                 }
                 
                 AC *= 4 * M_PI;
 
-
+                cout << "Calculate edc... " << flush;
                 // calculate edc
                 enu_levs.each_index([&](xsize i) {
                     edc(i) = dAdC(i) * dIdC(i) / AC(i);
                     conc(i) = min + i * dc;
                 });
 
-            
+            cout << "done." << endl;
                 enu_data.each_index([&](xsize i, xsize j) {
                     output(i,j) = edc(static_cast<xsize>(grid_input(i,j)));
                 });
