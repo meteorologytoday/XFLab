@@ -57,12 +57,12 @@ namespace X {
                 });
 
                 T dc = (max - min) / LEVS;
+                cout << "max = " << max << ", min = " << min << ", dc = " << dc << "levs = " << LEVS << endl;
                 enu_data.each_index([&] (xsize i, xsize j) {
                     T g = floor( (input(i,j) - min) / dc);
-                    if( g >= LEVS ) g = LEVS-1;
-
-                    grid_input(i,j) = g;
-                });
+                    grid_input(i,j) = (g >= LEVS) ? LEVS-1 : g;
+               
+            });
                 
                 // calculate grad tracer
                 enu_data.each_index([&] (xsize i, xsize j) {
@@ -106,13 +106,17 @@ namespace X {
                 AC *= 4 * M_PI;
 
                 cout << "Calculate edc... " << flush;
+            
+                T sum_dAdC = 0;
                 // calculate edc
                 enu_levs.each_index([&](xsize i) {
-                    edc(i) = dAdC(i) * dIdC(i) / AC(i);
+                    edc(i) = dAdC(i) * dIdC(i) / (AC(i) * (dc*dc));
                     conc(i) = min + i * dc;
+                    sum_dAdC += dAdC(i);
+                    cout << "edc(" << i << ") = " << edc(i) << endl;
                 });
-
-            cout << "done." << endl;
+                cout << sum_dAdC ;
+                cout << "done." << endl;
                 enu_data.each_index([&](xsize i, xsize j) {
                     output(i,j) = edc(static_cast<xsize>(grid_input(i,j)));
                 });
