@@ -33,7 +33,8 @@ namespace X {
 
                 T * datap = data.getDataPointer();
                 in.read(reinterpret_cast<char*>(&size), sizeof(xsize));
-                if( static_cast<xsize>(N) != size ) { throw 1; }
+                if( static_cast<xsize>(N) != size ) { cout << "Read size " << size << " instead of "<< N << "."; throw 1; }
+                //if( static_cast<xsize>(N) != size ) { throw 1; }
                 
                 char * buffer = new char[4];
                 for(xsize i=0; i<N; ++i) {
@@ -73,7 +74,7 @@ namespace X {
                 T * datap = data.getDataPointer();
                 in.read(reinterpret_cast<char*>(&size), sizeof(xsize));
 
-                if( static_cast<xsize>(N) != size ) { throw 1; }
+                if( static_cast<xsize>(N) != size ) { cout << "Read size " << size << " instead of "<< N << "."; throw 1; }
 
                 for(xsize i=0; i < N; ++i) {
                     in.read(buffer, sizeof(char) * bytes);
