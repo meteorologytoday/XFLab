@@ -1,6 +1,15 @@
 \hypertarget{class_x_1_1_data}{\section{X\-:\-:Data$<$ T, N $>$ Class Template Reference}
 \label{class_x_1_1_data}\index{X\-::\-Data$<$ T, N $>$@{X\-::\-Data$<$ T, N $>$}}
 }
+
+
+This class is the base class for all the data.  
+
+
+
+
+{\ttfamily \#include $<$data.\-h$>$}
+
 Inheritance diagram for X\-:\-:Data$<$ T, N $>$\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,23 +19,17 @@ Inheritance diagram for X\-:\-:Data$<$ T, N $>$\-:\begin{figure}[H]
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hypertarget{class_x_1_1_data_a1c0ad8ff192c0c3d8d7f46bf5b988180}{{\bfseries Data} (T $\ast$)}\label{class_x_1_1_data_a1c0ad8ff192c0c3d8d7f46bf5b988180}
-
+\hyperlink{class_x_1_1_data_a9ad5f351292008abe819ecaad1e3c94d}{Data} ()
 \item 
-\hypertarget{class_x_1_1_data_a085e20937e473698958910dfe31780aa}{T $\ast$ {\bfseries get\-Data\-Pointer} ()}\label{class_x_1_1_data_a085e20937e473698958910dfe31780aa}
-
+\hyperlink{class_x_1_1_data_a2b21e425670199f07a7e264b24f69214}{$\sim$\-Data} ()
 \item 
-\hypertarget{class_x_1_1_data_ac3fd035b3814e662ef527a00034f947d}{T $\ast$ {\bfseries p} ()}\label{class_x_1_1_data_ac3fd035b3814e662ef527a00034f947d}
-
+T $\ast$ \hyperlink{class_x_1_1_data_a085e20937e473698958910dfe31780aa}{get\-Data\-Pointer} ()
 \item 
-\hypertarget{class_x_1_1_data_a9a0a3e674daebe2750d8d7f233e7d0ce}{T \& {\bfseries get\-Data} (xsize i)}\label{class_x_1_1_data_a9a0a3e674daebe2750d8d7f233e7d0ce}
-
+T $\ast$ \hyperlink{class_x_1_1_data_ac3fd035b3814e662ef527a00034f947d}{p} ()
 \item 
-\hypertarget{class_x_1_1_data_a61f4210d3c61a8f08d7f85d52e2bf532}{xsize {\bfseries get\-Size} ()}\label{class_x_1_1_data_a61f4210d3c61a8f08d7f85d52e2bf532}
-
+T \& \hyperlink{class_x_1_1_data_a9a0a3e674daebe2750d8d7f233e7d0ce}{get\-Data} (xsize i)
 \item 
-\hypertarget{class_x_1_1_data_ac9e98c6fbdfdd23b664e6ac610fd672a}{void {\bfseries copy\-Data} (\hyperlink{class_x_1_1_data}{Data}$<$ T, N $>$ \&data)}\label{class_x_1_1_data_ac9e98c6fbdfdd23b664e6ac610fd672a}
-
+void \hyperlink{class_x_1_1_data_ac9e98c6fbdfdd23b664e6ac610fd672a}{copy\-Data} (\hyperlink{class_x_1_1_data}{Data}$<$ T, N $>$ \&data)
 \item 
 \hypertarget{class_x_1_1_data_a8c1665070bafded63fcd3bc3f7afbff2}{void {\bfseries operator+=} (\hyperlink{class_x_1_1_data}{Data}$<$ T, N $>$ \&B)}\label{class_x_1_1_data_a8c1665070bafded63fcd3bc3f7afbff2}
 
@@ -52,9 +55,74 @@ Inheritance diagram for X\-:\-:Data$<$ T, N $>$\-:\begin{figure}[H]
 \hypertarget{class_x_1_1_data_a78a26985cb6596c9d9e475f54887bbe3}{{\footnotesize template$<$typename B $>$ }\\void {\bfseries operator/=} (B b)}\label{class_x_1_1_data_a78a26985cb6596c9d9e475f54887bbe3}
 
 \end{DoxyCompactItemize}
-\subsubsection*{template$<$typename T, xsize N$>$ class X\-::\-Data$<$ T, N $>$}
 
 
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, xsize N$>$class X\-::\-Data$<$ T, N $>$}
+
+This class is the base class for all the data. 
+
+\begin{DoxyAuthor}{Author}
+Hsu, Tien-\/\-Yiao 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+N\-T\-U\-A\-S D\-M\-Lab 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2013/04/27 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\-0
+\end{DoxyVersion}
+\hyperlink{class_x_1_1_data}{Data} needs to be specified its data type and number of elements. \#data 
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_x_1_1_data_a9ad5f351292008abe819ecaad1e3c94d}{\index{X\-::\-Data@{X\-::\-Data}!Data@{Data}}
+\index{Data@{Data}!X::Data@{X\-::\-Data}}
+\subsubsection[{Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, xsize N$>$ {\bf X\-::\-Data}$<$ T, N $>$\-::{\bf Data} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_1_1_data_a9ad5f351292008abe819ecaad1e3c94d}
+Initialize an array of N elements with type T. They are all with default initialized value. \hypertarget{class_x_1_1_data_a2b21e425670199f07a7e264b24f69214}{\index{X\-::\-Data@{X\-::\-Data}!$\sim$\-Data@{$\sim$\-Data}}
+\index{$\sim$\-Data@{$\sim$\-Data}!X::Data@{X\-::\-Data}}
+\subsubsection[{$\sim$\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, xsize N$>$ {\bf X\-::\-Data}$<$ T, N $>$\-::$\sim${\bf Data} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{class_x_1_1_data_a2b21e425670199f07a7e264b24f69214}
+Deconstructor frees all the heap memory of the object. 
+
+\subsection{Member Function Documentation}
+\hypertarget{class_x_1_1_data_ac9e98c6fbdfdd23b664e6ac610fd672a}{\index{X\-::\-Data@{X\-::\-Data}!copy\-Data@{copy\-Data}}
+\index{copy\-Data@{copy\-Data}!X::Data@{X\-::\-Data}}
+\subsubsection[{copy\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, xsize N$>$ void {\bf X\-::\-Data}$<$ T, N $>$\-::{\bf copy\-Data} (
+\begin{DoxyParamCaption}
+\item[{{\bf Data}$<$ T, N $>$ \&}]{data}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_x_1_1_data_ac9e98c6fbdfdd23b664e6ac610fd672a}
+Copies the value of another data. \hypertarget{class_x_1_1_data_a9a0a3e674daebe2750d8d7f233e7d0ce}{\index{X\-::\-Data@{X\-::\-Data}!get\-Data@{get\-Data}}
+\index{get\-Data@{get\-Data}!X::Data@{X\-::\-Data}}
+\subsubsection[{get\-Data}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, xsize N$>$ T\& {\bf X\-::\-Data}$<$ T, N $>$\-::{\bf get\-Data} (
+\begin{DoxyParamCaption}
+\item[{xsize}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_x_1_1_data_a9a0a3e674daebe2750d8d7f233e7d0ce}
+Get the i-\/th element of the data. \hypertarget{class_x_1_1_data_a085e20937e473698958910dfe31780aa}{\index{X\-::\-Data@{X\-::\-Data}!get\-Data\-Pointer@{get\-Data\-Pointer}}
+\index{get\-Data\-Pointer@{get\-Data\-Pointer}!X::Data@{X\-::\-Data}}
+\subsubsection[{get\-Data\-Pointer}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, xsize N$>$ T$\ast$ {\bf X\-::\-Data}$<$ T, N $>$\-::{\bf get\-Data\-Pointer} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_x_1_1_data_a085e20937e473698958910dfe31780aa}
+Return the pointer of the data \hypertarget{class_x_1_1_data_ac3fd035b3814e662ef527a00034f947d}{\index{X\-::\-Data@{X\-::\-Data}!p@{p}}
+\index{p@{p}!X::Data@{X\-::\-Data}}
+\subsubsection[{p}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, xsize N$>$ T$\ast$ {\bf X\-::\-Data}$<$ T, N $>$\-::{\bf p} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline\mbox{]}}}}\label{class_x_1_1_data_ac3fd035b3814e662ef527a00034f947d}
+Abbreviation for \hyperlink{class_x_1_1_data_a085e20937e473698958910dfe31780aa}{get\-Data\-Pointer()} 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

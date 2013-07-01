@@ -12,6 +12,19 @@ using namespace std;
 #include <cmath>
 
 namespace X {
+
+    /*!
+     * \namespace FFTW
+     * \author Hsu, Tien-Yiao
+     * \copyright NTUAS DMLab
+     * \date 2013/04/29
+     * \version 1.0
+     *  
+     * \brief This class is the class for 2-dimensional index using row-major data arrangement.\n
+     *  So the (i,j)-th element is at the (i*N2 + j)th position.
+ 
+     *
+     */
     namespace FFTW {
 
                 template <typename T>

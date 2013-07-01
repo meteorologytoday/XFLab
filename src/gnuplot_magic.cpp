@@ -27,7 +27,7 @@ namespace X {
                 for(xsize j=0; j < n1; ++j) {
                     for(xsize i=0; i < (n0+1); ++i) {
                         if(i==0) 
-                            row[i] = (float) x[j];
+                            row[i] = (float) y[j];
                         else 
                             row[i] = (float) field[X::OFFSET2(n0,n1,i-1,j)]; 
                     }

@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,15 +103,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">X::DataIndex1&lt; T, N &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is for 1-dimensional data.  
+ <a href="class_x_1_1_data_index1.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="data__index__1_8h_source.html">data_index_1.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for X::DataIndex1&lt; T, N &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_x_1_1_data_index1.png" usemap="#X::DataIndex1&lt; T, N &gt;_map" alt=""/>
   <map id="X::DataIndex1&lt; T, N &gt;_map" name="X::DataIndex1&lt; T, N &gt;_map">
-<area href="class_x_1_1_data.html" alt="X::Data&lt; T, N &gt;" shape="rect" coords="0,56,139,80"/>
+<area href="class_x_1_1_data.html" title="This class is the base class for all the data." alt="X::Data&lt; T, N &gt;" shape="rect" coords="0,56,139,80"/>
 <area href="class_x_1_1_index1.html" alt="X::Index1&lt; T, N &gt;" shape="rect" coords="149,56,288,80"/>
-<area href="class_x_1_1_index.html" alt="X::Index&lt; T &gt;" shape="rect" coords="149,0,288,24"/>
+<area href="class_x_1_1_index.html" title="This class is the base class for all the Index. Data is an 1-dimensional array of data..." alt="X::Index&lt; T &gt;" shape="rect" coords="149,0,288,24"/>
 </map>
  </div></div>
 
@@ -118,22 +124,26 @@ Inheritance diagram for X::DataIndex1&lt; T, N &gt;:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a02ba45636320fa3dd627646faedb7056"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a02ba45636320fa3dd627646faedb7056"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultConstructor</b> ()</td></tr>
 <tr class="memitem:a2943aafc09d6e22164a2ec424ecc326a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2943aafc09d6e22164a2ec424ecc326a"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>DataIndex1</b> (T *)</td></tr>
 </table>
-<h3>template&lt;typename T, xsize N&gt;<br/>
- class X::DataIndex1&lt; T, N &gt;</h3>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T, xsize N&gt;<br/>
+class X::DataIndex1&lt; T, N &gt;</h3>
 
-<hr/>The documentation for this class was generated from the following file:<ul>
+<p>This class is for 1-dimensional data. </p>
+<dl class="section author"><dt>Author:</dt><dd>Hsu, Tien-Yiao </dd></dl>
+<dl class="section copyright"><dt>Copyright:</dt><dd>NTUAS DMLab </dd></dl>
+<dl class="section date"><dt>Date:</dt><dd>2013/04/29 </dd></dl>
+<dl class="section version"><dt>Version:</dt><dd>1.0 </dd></dl>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="data__index__1_8h_source.html">data_index_1.h</a></li>
 </ul>
 </div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:10 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:24 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

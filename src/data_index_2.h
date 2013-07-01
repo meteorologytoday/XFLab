@@ -11,11 +11,10 @@ namespace X {
     template <typename T, xsize N1, xsize N2>
         class DataIndex2 : public Data<T,N1*N2>, public Index2<T,N1,N2>{
             private:
-
-            public:
                 void DefaultConstructor();
+            
+            public:
                 DataIndex2();
-                DataIndex2(T*);
                 ~DataIndex2();
     
                 using Data<T,N1*N2>::operator+=;

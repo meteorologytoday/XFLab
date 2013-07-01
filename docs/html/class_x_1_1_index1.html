@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,13 +103,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">X::Index1&lt; T, N &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is the class for 1-dimensional index.  
+ <a href="class_x_1_1_index1.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="index__1_8h_source.html">index_1.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for X::Index1&lt; T, N &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_x_1_1_index1.png" usemap="#X::Index1&lt; T, N &gt;_map" alt=""/>
   <map id="X::Index1&lt; T, N &gt;_map" name="X::Index1&lt; T, N &gt;_map">
-<area href="class_x_1_1_index.html" alt="X::Index&lt; T &gt;" shape="rect" coords="0,0,118,24"/>
+<area href="class_x_1_1_index.html" title="This class is the base class for all the Index. Data is an 1-dimensional array of data..." alt="X::Index&lt; T &gt;" shape="rect" coords="0,0,118,24"/>
 <area href="class_x_1_1_dataset.html" alt="X::Dataset&lt; T, N &gt;" shape="rect" coords="0,112,118,136"/>
 </map>
  </div></div>
@@ -119,14 +125,63 @@ Inheritance diagram for X::Index1&lt; T, N &gt;:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1a3384046f034e8c7abb66f33e06872d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1a3384046f034e8c7abb66f33e06872d"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>Index1</b> (T *data)</td></tr>
-<tr class="memitem:a2d876d68fd4b7248660909862d2fd66b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2d876d68fd4b7248660909862d2fd66b"></a>
-virtual T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (xsize i)</td></tr>
-<tr class="memitem:af340b1faa1a33473a9a1f972e1a2f7a1"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af340b1faa1a33473a9a1f972e1a2f7a1"></a>
-virtual T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]</b> (xsize i)</td></tr>
+<tr class="memitem:a2d876d68fd4b7248660909862d2fd66b"><td class="memItemLeft" align="right" valign="top">virtual T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_1_1_index1.html#a2d876d68fd4b7248660909862d2fd66b">operator()</a> (xsize i)</td></tr>
+<tr class="memitem:af340b1faa1a33473a9a1f972e1a2f7a1"><td class="memItemLeft" align="right" valign="top">virtual T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_1_1_index1.html#af340b1faa1a33473a9a1f972e1a2f7a1">operator[]</a> (xsize i)</td></tr>
 </table>
-<h3>template&lt;typename T, xsize N&gt;<br/>
- class X::Index1&lt; T, N &gt;</h3>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T, xsize N&gt;<br/>
+class X::Index1&lt; T, N &gt;</h3>
 
+<p>This class is the class for 1-dimensional index. </p>
+<dl class="section author"><dt>Author:</dt><dd>Hsu, Tien-Yiao </dd></dl>
+<dl class="section copyright"><dt>Copyright:</dt><dd>NTUAS DMLab </dd></dl>
+<dl class="section date"><dt>Date:</dt><dd>2013/04/27 </dd></dl>
+<dl class="section version"><dt>Version:</dt><dd>1.0 </dd></dl>
+</div><hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="a2d876d68fd4b7248660909862d2fd66b"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, xsize N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual T&amp; <a class="el" href="class_x_1_1_index1.html">X::Index1</a>&lt; T, N &gt;::operator() </td>
+          <td>(</td>
+          <td class="paramtype">xsize&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Using <a class="el" href="class_x_1_1_data_index1.html" title="This class is for 1-dimensional data.">DataIndex1</a> as an example: </p>
+<div class="fragment"><pre class="fragment"> {.cpp}
+ DataIndex1&lt;float,10&gt; data;
+ data(0) = 1.0;
+</pre></div><p>Note that this function returns left-value. </p>
+
+</div>
+</div>
+<a class="anchor" id="af340b1faa1a33473a9a1f972e1a2f7a1"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, xsize N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual T&amp; <a class="el" href="class_x_1_1_index1.html">X::Index1</a>&lt; T, N &gt;::operator[] </td>
+          <td>(</td>
+          <td class="paramtype">xsize&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td><code> [inline, virtual]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Same as <a class="el" href="class_x_1_1_index1.html#a2d876d68fd4b7248660909862d2fd66b">operator()(xsize)</a>. </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="index__1_8h_source.html">index_1.h</a></li>
 </ul>
@@ -134,7 +189,7 @@ virtual T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator[]
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:12 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:26 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

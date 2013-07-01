@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,8 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <div class="header">
-  <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
   <div class="headertitle">
 <div class="title">X::DataIndex2&lt; T, N1, N2 &gt; Class Template Reference</div>  </div>
 </div><!--header-->
@@ -109,20 +108,12 @@ Inheritance diagram for X::DataIndex2&lt; T, N1, N2 &gt;:</div>
   <img src="class_x_1_1_data_index2.png" usemap="#X::DataIndex2&lt; T, N1, N2 &gt;_map" alt=""/>
   <map id="X::DataIndex2&lt; T, N1, N2 &gt;_map" name="X::DataIndex2&lt; T, N1, N2 &gt;_map">
 <area href="class_x_1_1_data.html" alt="X::Data&lt; T, N1 *N2 &gt;" shape="rect" coords="0,56,171,80"/>
-<area href="class_x_1_1_index2.html" alt="X::Index2&lt; T, N1, N2 &gt;" shape="rect" coords="181,56,352,80"/>
-<area href="class_x_1_1_index.html" alt="X::Index&lt; T &gt;" shape="rect" coords="181,0,352,24"/>
+<area href="class_x_1_1_index2.html" title="This class is the class for 2-dimensional index using row-major data arrangement.  So the (i..." alt="X::Index2&lt; T, N1, N2 &gt;" shape="rect" coords="181,56,352,80"/>
+<area href="class_x_1_1_index.html" title="This class is the base class for all the Index. Data is an 1-dimensional array of data..." alt="X::Index&lt; T &gt;" shape="rect" coords="181,0,352,24"/>
 </map>
  </div></div>
 
 <p><a href="class_x_1_1_data_index2-members.html">List of all members.</a></p>
-<table class="memberdecls">
-<tr><td colspan="2"><h2><a name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a25805f76116adcea21754503f42ac30f"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a25805f76116adcea21754503f42ac30f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultConstructor</b> ()</td></tr>
-<tr class="memitem:a23b362365b1115b5e922ee50ca026c28"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a23b362365b1115b5e922ee50ca026c28"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>DataIndex2</b> (T *)</td></tr>
-</table>
 <h3>template&lt;typename T, xsize N1, xsize N2&gt;<br/>
  class X::DataIndex2&lt; T, N1, N2 &gt;</h3>
 
@@ -133,7 +124,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>DefaultConstructor</b
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:10 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:24 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

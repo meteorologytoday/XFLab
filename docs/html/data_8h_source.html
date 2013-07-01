@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -96,42 +96,43 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00002"></a>00002 <span class="preprocessor">#ifndef X_DATA_H</span>
 <a name="l00003"></a>00003 <span class="preprocessor"></span><span class="preprocessor">#define X_DATA_H</span>
 <a name="l00004"></a>00004 <span class="preprocessor"></span><span class="keyword">namespace </span>X {
-<a name="l00005"></a>00005     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, xsize N&gt;
-<a name="l00006"></a><a class="code" href="class_x_1_1_data.html">00006</a>         <span class="keyword">class </span><a class="code" href="class_x_1_1_data.html">Data</a> {
-<a name="l00007"></a>00007             <span class="keyword">private</span>:
-<a name="l00008"></a>00008                 T *data;
-<a name="l00009"></a>00009                 <span class="keywordtype">bool</span> manage_memory;
-<a name="l00010"></a>00010             <span class="keyword">public</span>:
-<a name="l00011"></a>00011                 <a class="code" href="class_x_1_1_data.html">Data</a>();
-<a name="l00012"></a>00012                 <a class="code" href="class_x_1_1_data.html">Data</a>(T*);      <span class="comment">// initialize by an pre-defined array</span>
-<a name="l00013"></a>00013                 ~<a class="code" href="class_x_1_1_data.html">Data</a>();
-<a name="l00014"></a>00014 
-<a name="l00015"></a>00015                 <span class="keyword">inline</span> T* getDataPointer() { <span class="keywordflow">return</span> this-&gt;data; }
-<a name="l00016"></a>00016                 <span class="keyword">inline</span> T* p() { <span class="keywordflow">return</span> this-&gt;getDataPointer(); }
-<a name="l00017"></a>00017                 <span class="keyword">inline</span> T&amp; getData(xsize i) { <span class="keywordflow">return</span> this-&gt;data[i]; }
-<a name="l00018"></a>00018                 <span class="keyword">inline</span> xsize getSize() { <span class="keywordflow">return</span> this-&gt;N; }
-<a name="l00019"></a>00019                 <span class="keyword">inline</span> <span class="keywordtype">void</span> copyData(<a class="code" href="class_x_1_1_data.html">Data&lt;T,N&gt;</a>&amp; data) { <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;getData(i)) = data.getData(i); }
-<a name="l00020"></a>00020 
-<a name="l00021"></a>00021             <span class="keyword">public</span>:
-<a name="l00022"></a>00022                 <span class="keyword">inline</span> <span class="keywordtype">void</span> operator+=(<a class="code" href="class_x_1_1_data.html">Data&lt;T,N&gt;</a>&amp; B) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] += (B.getDataPointer())[i]; }
-<a name="l00023"></a>00023                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> B&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> operator+=(B b) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] += <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(b); } 
-<a name="l00024"></a>00024                 <span class="keyword">inline</span> <span class="keywordtype">void</span> operator-=(<a class="code" href="class_x_1_1_data.html">Data&lt;T,N&gt;</a>&amp; B) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] -= (B.getDataPointer())[i]; }
-<a name="l00025"></a>00025                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> B&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> operator-=(B b) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] -= <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(b); } 
-<a name="l00026"></a>00026                 <span class="keyword">inline</span> <span class="keywordtype">void</span> operator*=(<a class="code" href="class_x_1_1_data.html">Data&lt;T,N&gt;</a>&amp; B) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] *= (B.getDataPointer())[i]; }
-<a name="l00027"></a>00027                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> B&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> operator*=(B b) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] *= <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(b); } 
-<a name="l00028"></a>00028                 <span class="keyword">inline</span> <span class="keywordtype">void</span> operator/=(<a class="code" href="class_x_1_1_data.html">Data&lt;T,N&gt;</a>&amp; B) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] /= (B.getDataPointer())[i]; }
-<a name="l00029"></a>00029                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> B&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> operator/=(B b) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] /= <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(b); } 
-<a name="l00030"></a>00030         };
-<a name="l00031"></a>00031 }
+<a name="l00005"></a>00005 
+<a name="l00006"></a>00006 
+<a name="l00016"></a>00016     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, xsize N&gt;
+<a name="l00017"></a><a class="code" href="class_x_1_1_data.html">00017</a>         <span class="keyword">class </span><a class="code" href="class_x_1_1_data.html" title="This class is the base class for all the data.">Data</a> {
+<a name="l00018"></a>00018             <span class="keyword">private</span>:
+<a name="l00019"></a>00019                 T *data; 
+<a name="l00020"></a>00020             <span class="keyword">public</span>:
+<a name="l00021"></a>00021                 
+<a name="l00026"></a>00026                 <a class="code" href="class_x_1_1_data.html#a9ad5f351292008abe819ecaad1e3c94d">Data</a>();
+<a name="l00027"></a>00027                 
+<a name="l00031"></a>00031                 <a class="code" href="class_x_1_1_data.html#a2b21e425670199f07a7e264b24f69214">~Data</a>();
 <a name="l00032"></a>00032 
-<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;data.cpp&quot;</span>
-<a name="l00034"></a>00034 
-<a name="l00035"></a>00035 <span class="preprocessor">#endif</span>
+<a name="l00033"></a><a class="code" href="class_x_1_1_data.html#a085e20937e473698958910dfe31780aa">00033</a>                 <span class="keyword">inline</span> T* <a class="code" href="class_x_1_1_data.html#a085e20937e473698958910dfe31780aa">getDataPointer</a>() { <span class="keywordflow">return</span> this-&gt;data; }   
+<a name="l00034"></a><a class="code" href="class_x_1_1_data.html#ac3fd035b3814e662ef527a00034f947d">00034</a>                 <span class="keyword">inline</span> T* <a class="code" href="class_x_1_1_data.html#ac3fd035b3814e662ef527a00034f947d">p</a>() { <span class="keywordflow">return</span> this-&gt;<a class="code" href="class_x_1_1_data.html#a085e20937e473698958910dfe31780aa">getDataPointer</a>(); }    
+<a name="l00035"></a><a class="code" href="class_x_1_1_data.html#a9a0a3e674daebe2750d8d7f233e7d0ce">00035</a>                 <span class="keyword">inline</span> T&amp; <a class="code" href="class_x_1_1_data.html#a9a0a3e674daebe2750d8d7f233e7d0ce">getData</a>(xsize i) { <span class="keywordflow">return</span> this-&gt;data[i]; }
+<a name="l00040"></a><a class="code" href="class_x_1_1_data.html#ac9e98c6fbdfdd23b664e6ac610fd672a">00040</a>                 <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_x_1_1_data.html#ac9e98c6fbdfdd23b664e6ac610fd672a">copyData</a>(<a class="code" href="class_x_1_1_data.html" title="This class is the base class for all the data.">Data&lt;T,N&gt;</a>&amp; data) { <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;<a class="code" href="class_x_1_1_data.html#a9a0a3e674daebe2750d8d7f233e7d0ce">getData</a>(i)) = data.<a class="code" href="class_x_1_1_data.html#a9a0a3e674daebe2750d8d7f233e7d0ce">getData</a>(i); }
+<a name="l00041"></a>00041 
+<a name="l00042"></a>00042             <span class="keyword">public</span>:
+<a name="l00043"></a>00043                 <span class="keyword">inline</span> <span class="keywordtype">void</span> operator+=(<a class="code" href="class_x_1_1_data.html" title="This class is the base class for all the data.">Data&lt;T,N&gt;</a>&amp; B) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] += (B.<a class="code" href="class_x_1_1_data.html#a085e20937e473698958910dfe31780aa">getDataPointer</a>())[i]; }
+<a name="l00044"></a>00044                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> B&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> operator+=(B b) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] += <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(b); } 
+<a name="l00045"></a>00045                 <span class="keyword">inline</span> <span class="keywordtype">void</span> operator-=(Data&lt;T,N&gt;&amp; B) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] -= (B.getDataPointer())[i]; }
+<a name="l00046"></a>00046                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> B&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> operator-=(B b) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] -= <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(b); } 
+<a name="l00047"></a>00047                 <span class="keyword">inline</span> <span class="keywordtype">void</span> operator*=(Data&lt;T,N&gt;&amp; B) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] *= (B.getDataPointer())[i]; }
+<a name="l00048"></a>00048                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> B&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> operator*=(B b) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] *= <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(b); } 
+<a name="l00049"></a>00049                 <span class="keyword">inline</span> <span class="keywordtype">void</span> operator/=(Data&lt;T,N&gt;&amp; B) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] /= (B.getDataPointer())[i]; }
+<a name="l00050"></a>00050                 <span class="keyword">template</span> &lt;<span class="keyword">typename</span> B&gt; <span class="keyword">inline</span> <span class="keywordtype">void</span> operator/=(B b) {  <span class="keywordflow">for</span>(xsize i=0; i &lt; N; ++i) (this-&gt;data)[i] /= <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(b); } 
+<a name="l00051"></a>00051         };
+<a name="l00052"></a>00052 }
+<a name="l00053"></a>00053 
+<a name="l00054"></a>00054 <span class="preprocessor">#include &quot;data.cpp&quot;</span>
+<a name="l00055"></a>00055 
+<a name="l00056"></a>00056 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:10 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:23 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

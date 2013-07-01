@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -106,41 +106,40 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00012"></a>00012 <span class="preprocessor">#include &quot;data_index_1.h&quot;</span>
 <a name="l00013"></a>00013 <span class="preprocessor">#include &quot;data_index_2.h&quot;</span>
 <a name="l00014"></a>00014 
-<a name="l00015"></a>00015 <span class="comment">/*</span>
-<a name="l00016"></a>00016 <span class="comment">#ifdef X_INCLUDE_IO</span>
-<a name="l00017"></a>00017 <span class="comment">#include &quot;basic_io.h&quot;</span>
-<a name="l00018"></a>00018 <span class="comment">#endif</span>
-<a name="l00019"></a>00019 <span class="comment"></span>
-<a name="l00020"></a>00020 <span class="comment">#ifdef X_INCLUDE_DIM2</span>
-<a name="l00021"></a>00021 <span class="comment">// dimension 2 expansion</span>
-<a name="l00022"></a>00022 <span class="comment">#include &quot;field2d.h&quot;</span>
-<a name="l00023"></a>00023 <span class="comment">#include &quot;field2dindex2.h&quot;</span>
-<a name="l00024"></a>00024 <span class="comment"></span>
-<a name="l00025"></a>00025 <span class="comment">#ifdef X_INCLUDE_IO</span>
-<a name="l00026"></a>00026 <span class="comment">#include &quot;dim2_io.h&quot;</span>
-<a name="l00027"></a>00027 <span class="comment">#endif</span>
-<a name="l00028"></a>00028 <span class="comment"></span>
-<a name="l00029"></a>00029 <span class="comment">#endif</span>
-<a name="l00030"></a>00030 <span class="comment">*/</span>
-<a name="l00031"></a>00031 <span class="preprocessor">#ifdef X_INCLUDE_FFTW</span>
-<a name="l00032"></a>00032 <span class="preprocessor"></span><span class="comment">// fftw expansion</span>
-<a name="l00033"></a>00033 <span class="preprocessor">#include &quot;fftw_magic.h&quot;</span>
-<a name="l00034"></a>00034 <span class="preprocessor">#endif</span>
-<a name="l00035"></a>00035 <span class="preprocessor"></span>
-<a name="l00036"></a>00036 <span class="preprocessor">#ifdef X_INCLUDE_GNUPLOT</span>
-<a name="l00037"></a>00037 <span class="preprocessor"></span><span class="comment">// gnuplot expansion</span>
-<a name="l00038"></a>00038 <span class="preprocessor">#include &quot;gnuplot_magic.h&quot;</span>
-<a name="l00039"></a>00039 <span class="preprocessor">#endif</span>
-<a name="l00040"></a>00040 <span class="preprocessor"></span>
-<a name="l00041"></a>00041 <span class="preprocessor">#ifdef X_INCLUDE_EDC</span>
-<a name="l00042"></a>00042 <span class="preprocessor"></span><span class="comment">// effectiv diffusivity coefficient tool</span>
-<a name="l00043"></a>00043 <span class="preprocessor">#include &quot;edc.cpp&quot;</span>
-<a name="l00044"></a>00044 <span class="preprocessor">#endif</span>
+<a name="l00015"></a>00015 <span class="preprocessor">#ifdef X_INCLUDE_IO</span>
+<a name="l00016"></a>00016 <span class="preprocessor"></span><span class="preprocessor">#include &quot;io.h&quot;</span>
+<a name="l00017"></a>00017 <span class="preprocessor">#endif</span>
+<a name="l00018"></a>00018 <span class="preprocessor"></span><span class="comment">/*</span>
+<a name="l00019"></a>00019 <span class="comment">#ifdef X_INCLUDE_DIM2</span>
+<a name="l00020"></a>00020 <span class="comment">// dimension 2 expansion</span>
+<a name="l00021"></a>00021 <span class="comment">#include &quot;field2d.h&quot;</span>
+<a name="l00022"></a>00022 <span class="comment">#include &quot;field2dindex2.h&quot;</span>
+<a name="l00023"></a>00023 <span class="comment"></span>
+<a name="l00024"></a>00024 <span class="comment">#ifdef X_INCLUDE_IO</span>
+<a name="l00025"></a>00025 <span class="comment">#include &quot;dim2_io.h&quot;</span>
+<a name="l00026"></a>00026 <span class="comment">#endif</span>
+<a name="l00027"></a>00027 <span class="comment"></span>
+<a name="l00028"></a>00028 <span class="comment">#endif</span>
+<a name="l00029"></a>00029 <span class="comment">*/</span>
+<a name="l00030"></a>00030 <span class="preprocessor">#ifdef X_INCLUDE_FFTW</span>
+<a name="l00031"></a>00031 <span class="preprocessor"></span><span class="comment">// fftw expansion</span>
+<a name="l00032"></a>00032 <span class="preprocessor">#include &quot;fftw_magic.h&quot;</span>
+<a name="l00033"></a>00033 <span class="preprocessor">#endif</span>
+<a name="l00034"></a>00034 <span class="preprocessor"></span>
+<a name="l00035"></a>00035 <span class="preprocessor">#ifdef X_INCLUDE_GNUPLOT</span>
+<a name="l00036"></a>00036 <span class="preprocessor"></span><span class="comment">// gnuplot expansion</span>
+<a name="l00037"></a>00037 <span class="preprocessor">#include &quot;gnuplot_magic.h&quot;</span>
+<a name="l00038"></a>00038 <span class="preprocessor">#endif</span>
+<a name="l00039"></a>00039 <span class="preprocessor"></span>
+<a name="l00040"></a>00040 <span class="preprocessor">#ifdef X_INCLUDE_EDC</span>
+<a name="l00041"></a>00041 <span class="preprocessor"></span><span class="comment">// effectiv diffusivity coefficient tool</span>
+<a name="l00042"></a>00042 <span class="preprocessor">#include &quot;edc.cpp&quot;</span>
+<a name="l00043"></a>00043 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:10 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:23 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

@@ -1,6 +1,7 @@
 var searchData=
 [
   ['data',['Data',['../class_x_1_1_data.html',1,'X']]],
+  ['data',['Data',['../class_x_1_1_data.html#a9ad5f351292008abe819ecaad1e3c94d',1,'X::Data']]],
   ['data_3c_20t_2c_20n1_20_2an2_20_3e',['Data< T, N1 *N2 >',['../class_x_1_1_data.html',1,'X']]],
   ['dataindex1',['DataIndex1',['../class_x_1_1_data_index1.html',1,'X']]],
   ['dataindex2',['DataIndex2',['../class_x_1_1_data_index2.html',1,'X']]],

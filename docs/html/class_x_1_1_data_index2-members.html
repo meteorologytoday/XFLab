@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -101,15 +102,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 This is the complete list of members for <a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a>, including all inherited members.<table>
-  <tr bgcolor="#f0f0f0"><td><b>copyData</b>(Data&lt; T, N &gt; &amp;data) (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>Data</b>() (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>Data</b>(T *) (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_x_1_1_data.html#ac9e98c6fbdfdd23b664e6ac610fd672a">copyData</a>(Data&lt; T, N &gt; &amp;data)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_x_1_1_data.html#a9ad5f351292008abe819ecaad1e3c94d">Data</a>()</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>DataIndex2</b>() (defined in <a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a></td><td></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>DataIndex2</b>(T *) (defined in <a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a></td><td></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>DefaultConstructor</b>() (defined in <a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a></td><td></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>getData</b>(xsize i) (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>getDataPointer</b>() (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>getSize</b>() (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_x_1_1_data.html#a9a0a3e674daebe2750d8d7f233e7d0ce">getData</a>(xsize i)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_x_1_1_data.html#a085e20937e473698958910dfe31780aa">getDataPointer</a>()</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>getTargetDataPointer</b>() (defined in <a class="el" href="class_x_1_1_index.html">X::Index&lt; T &gt;</a>)</td><td><a class="el" href="class_x_1_1_index.html">X::Index&lt; T &gt;</a></td><td><code> [inline]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>Index2</b>() (defined in <a class="el" href="class_x_1_1_index2.html">X::Index2&lt; T, N1, N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_index2.html">X::Index2&lt; T, N1, N2 &gt;</a></td><td><code> [inline]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>Index2</b>(T *data) (defined in <a class="el" href="class_x_1_1_index2.html">X::Index2&lt; T, N1, N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_index2.html">X::Index2&lt; T, N1, N2 &gt;</a></td><td><code> [inline]</code></td></tr>
@@ -122,16 +119,16 @@ This is the complete list of members for <a class="el" href="class_x_1_1_data_in
   <tr bgcolor="#f0f0f0"><td><b>operator-=</b>(B b) (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>operator/=</b>(Data&lt; T, N &gt; &amp;B) (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>operator/=</b>(B b) (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>p</b>() (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_x_1_1_data.html#ac3fd035b3814e662ef527a00034f947d">p</a>()</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td><code> [inline]</code></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>setTargetDataPointer</b>(T *data) (defined in <a class="el" href="class_x_1_1_index.html">X::Index&lt; T &gt;</a>)</td><td><a class="el" href="class_x_1_1_index.html">X::Index&lt; T &gt;</a></td><td><code> [inline]</code></td></tr>
-  <tr bgcolor="#f0f0f0"><td><b>~Data</b>() (defined in <a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td></td></tr>
+  <tr class="memlist"><td><a class="el" href="class_x_1_1_data.html#a2b21e425670199f07a7e264b24f69214">~Data</a>()</td><td><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N1 *N2 &gt;</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>~DataIndex2</b>() (defined in <a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a></td><td></td></tr>
   <tr bgcolor="#f0f0f0"><td><b>~Index2</b>() (defined in <a class="el" href="class_x_1_1_index2.html">X::Index2&lt; T, N1, N2 &gt;</a>)</td><td><a class="el" href="class_x_1_1_index2.html">X::Index2&lt; T, N1, N2 &gt;</a></td><td><code> [inline]</code></td></tr>
 </table></div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:10 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:24 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

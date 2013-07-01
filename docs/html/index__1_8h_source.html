@@ -78,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,27 +102,29 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00008"></a>00008 <span class="preprocessor">#include &quot;data.h&quot;</span>
 <a name="l00009"></a>00009 
 <a name="l00010"></a>00010 <span class="keyword">namespace </span>X {
-<a name="l00011"></a>00011     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, xsize N&gt;
-<a name="l00012"></a><a class="code" href="class_x_1_1_index1.html">00012</a>         <span class="keyword">class </span><a class="code" href="class_x_1_1_index1.html">Index1</a> : <span class="keyword">public</span> <a class="code" href="class_x_1_1_index.html">Index</a>&lt;T&gt; {
-<a name="l00013"></a>00013             <span class="keyword">private</span>:
-<a name="l00014"></a>00014             <span class="keyword">public</span>:
-<a name="l00015"></a>00015                 <a class="code" href="class_x_1_1_index1.html">Index1</a>() {}
-<a name="l00016"></a>00016                 <a class="code" href="class_x_1_1_index1.html">Index1</a>(T* data) {this-&gt;setTargetDataPointer(data);}
-<a name="l00017"></a>00017                 ~<a class="code" href="class_x_1_1_index1.html">Index1</a>() {}
-<a name="l00018"></a>00018             
-<a name="l00019"></a>00019             <span class="keyword">public</span>:
-<a name="l00020"></a>00020                 <span class="keyword">inline</span> <span class="keyword">virtual</span> T&amp; operator()(xsize i) { <span class="keywordflow">return</span> (this-&gt;getTargetDataPointer())[i]; }
-<a name="l00021"></a>00021                 <span class="keyword">inline</span> <span class="keyword">virtual</span> T&amp; operator[](xsize i) { <span class="keywordflow">return</span> (this-&gt;getTargetDataPointer())[i]; }
-<a name="l00022"></a>00022         };
-<a name="l00023"></a>00023 }
-<a name="l00024"></a>00024 
-<a name="l00025"></a>00025 
-<a name="l00026"></a>00026 <span class="preprocessor">#endif</span>
+<a name="l00011"></a>00011 
+<a name="l00021"></a>00021     <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, xsize N&gt;
+<a name="l00022"></a><a class="code" href="class_x_1_1_index1.html">00022</a>         <span class="keyword">class </span><a class="code" href="class_x_1_1_index1.html" title="This class is the class for 1-dimensional index.">Index1</a> : <span class="keyword">public</span> <a class="code" href="class_x_1_1_index.html" title="This class is the base class for all the Index. Data is an 1-dimensional array of data...">Index</a>&lt;T&gt; {
+<a name="l00023"></a>00023             <span class="keyword">private</span>:
+<a name="l00024"></a>00024             <span class="keyword">public</span>:
+<a name="l00025"></a>00025                 
+<a name="l00026"></a>00026                 <a class="code" href="class_x_1_1_index1.html" title="This class is the class for 1-dimensional index.">Index1</a>(T* data) {this-&gt;setTargetDataPointer(data);}
+<a name="l00027"></a>00027                 ~<a class="code" href="class_x_1_1_index1.html" title="This class is the class for 1-dimensional index.">Index1</a>() {}
+<a name="l00028"></a>00028             
+<a name="l00029"></a>00029             <span class="keyword">public</span>:
+<a name="l00030"></a>00030 
+<a name="l00041"></a><a class="code" href="class_x_1_1_index1.html#a2d876d68fd4b7248660909862d2fd66b">00041</a>                 <span class="keyword">inline</span> <span class="keyword">virtual</span> T&amp; <a class="code" href="class_x_1_1_index1.html#a2d876d68fd4b7248660909862d2fd66b">operator()</a>(xsize i) { <span class="keywordflow">return</span> (this-&gt;getTargetDataPointer())[i]; }
+<a name="l00042"></a><a class="code" href="class_x_1_1_index1.html#af340b1faa1a33473a9a1f972e1a2f7a1">00042</a>                 <span class="keyword">inline</span> <span class="keyword">virtual</span> T&amp; <a class="code" href="class_x_1_1_index1.html#af340b1faa1a33473a9a1f972e1a2f7a1">operator[]</a>(xsize i) { <span class="keywordflow">return</span> (this-&gt;getTargetDataPointer())[i]; } 
+<a name="l00043"></a>00043         };
+<a name="l00044"></a>00044 }
+<a name="l00045"></a>00045 
+<a name="l00046"></a>00046 
+<a name="l00047"></a>00047 <span class="preprocessor">#endif</span>
 </pre></div></div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:10 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:23 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

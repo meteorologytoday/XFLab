@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li class="current"><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 </div>
@@ -80,7 +81,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,8 +96,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock">Here are the classes, structs, unions and interfaces with brief descriptions:</div><table>
-  <tr><td class="indexkey"><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N &gt;</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="class_x_1_1_data_index1.html">X::DataIndex1&lt; T, N &gt;</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="class_x_1_1_data.html">X::Data&lt; T, N &gt;</a></td><td class="indexvalue">This class is the base class for all the data </td></tr>
+  <tr><td class="indexkey"><a class="el" href="class_x_1_1_data_index1.html">X::DataIndex1&lt; T, N &gt;</a></td><td class="indexvalue">This class is for 1-dimensional data </td></tr>
   <tr><td class="indexkey"><a class="el" href="class_x_1_1_data_index2.html">X::DataIndex2&lt; T, N1, N2 &gt;</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="class_x_1_1_dataset.html">X::Dataset&lt; DT, N &gt;</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="class_x_1_1_enumerator1.html">X::Enumerator1&lt; P1 &gt;</a></td><td class="indexvalue"></td></tr>
@@ -104,9 +105,10 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <tr><td class="indexkey"><a class="el" href="class_x_1_1_field.html">X::Field&lt; DT, GT, P, N &gt;</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="class_x_1_1_field2_d.html">X::Field2D&lt; T, P, N &gt;</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="class_x_1_1_field2_d_index2.html">X::Field2DIndex2&lt; T, P1, P2, N &gt;</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="class_x_1_1_index.html">X::Index&lt; T &gt;</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="class_x_1_1_index1.html">X::Index1&lt; T, N &gt;</a></td><td class="indexvalue"></td></tr>
-  <tr><td class="indexkey"><a class="el" href="class_x_1_1_index2.html">X::Index2&lt; T, N1, N2 &gt;</a></td><td class="indexvalue"></td></tr>
+  <tr><td class="indexkey"><a class="el" href="class_x_1_1_index.html">X::Index&lt; T &gt;</a></td><td class="indexvalue">This class is the base class for all the <a class="el" href="class_x_1_1_index.html" title="This class is the base class for all the Index. Data is an 1-dimensional array of data...">Index</a>. <a class="el" href="class_x_1_1_data.html" title="This class is the base class for all the data.">Data</a> is an 1-dimensional array of data, while sometimes we need more than 1 index. Programmers may derived from this class to have their own way to access data </td></tr>
+  <tr><td class="indexkey"><a class="el" href="class_x_1_1_index1.html">X::Index1&lt; T, N &gt;</a></td><td class="indexvalue">This class is the class for 1-dimensional index </td></tr>
+  <tr><td class="indexkey"><a class="el" href="class_x_1_1_index2.html">X::Index2&lt; T, N1, N2 &gt;</a></td><td class="indexvalue">This class is the class for 2-dimensional index using row-major data arrangement.<br/>
+ So the (i,j)-th element is at the (i*N2 + j)th position </td></tr>
   <tr><td class="indexkey"><a class="el" href="class_x_1_1_matrix.html">X::Matrix&lt; T, ROWS, COLS &gt;</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="class_x_1_1_memory.html">X::Memory</a></td><td class="indexvalue"></td></tr>
   <tr><td class="indexkey"><a class="el" href="class_x_1_1_meshgrid_field2_filestream.html">X::MeshgridField2Filestream&lt; T, P1, P2, N &gt;</a></td><td class="indexvalue"></td></tr>
@@ -118,7 +120,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:12 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:27 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

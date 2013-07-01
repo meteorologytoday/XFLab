@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,13 +103,19 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">X::Index2&lt; T, N1, N2 &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is the class for 2-dimensional index using row-major data arrangement.<br/>
+ So the (i,j)-th element is at the (i*N2 + j)th position.  
+ <a href="class_x_1_1_index2.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="index__2_8h_source.html">index_2.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for X::Index2&lt; T, N1, N2 &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_x_1_1_index2.png" usemap="#X::Index2&lt; T, N1, N2 &gt;_map" alt=""/>
   <map id="X::Index2&lt; T, N1, N2 &gt;_map" name="X::Index2&lt; T, N1, N2 &gt;_map">
-<area href="class_x_1_1_index.html" alt="X::Index&lt; T &gt;" shape="rect" coords="0,0,171,24"/>
+<area href="class_x_1_1_index.html" title="This class is the base class for all the Index. Data is an 1-dimensional array of data..." alt="X::Index&lt; T &gt;" shape="rect" coords="0,0,171,24"/>
 <area href="class_x_1_1_data_index2.html" alt="X::DataIndex2&lt; T, N1, N2 &gt;" shape="rect" coords="0,112,171,136"/>
 </map>
  </div></div>
@@ -122,17 +129,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a06e8ccdbe72125ccff7b5d8db35892e7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a06e8ccdbe72125ccff7b5d8db35892e7"></a>
 virtual T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>operator()</b> (xsize i, xsize j)</td></tr>
 </table>
-<h3>template&lt;typename T, xsize N1, xsize N2&gt;<br/>
- class X::Index2&lt; T, N1, N2 &gt;</h3>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T, xsize N1, xsize N2&gt;<br/>
+class X::Index2&lt; T, N1, N2 &gt;</h3>
 
-<hr/>The documentation for this class was generated from the following file:<ul>
+<p>This class is the class for 2-dimensional index using row-major data arrangement.<br/>
+ So the (i,j)-th element is at the (i*N2 + j)th position. </p>
+<dl class="section author"><dt>Author:</dt><dd>Hsu, Tien-Yiao </dd></dl>
+<dl class="section copyright"><dt>Copyright:</dt><dd>NTUAS DMLab </dd></dl>
+<dl class="section date"><dt>Date:</dt><dd>2013/04/29 </dd></dl>
+<dl class="section version"><dt>Version:</dt><dd>1.0 </dd></dl>
+</div><hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="index__2_8h_source.html">index_2.h</a></li>
 </ul>
 </div><!-- contents -->
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:12 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:26 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>

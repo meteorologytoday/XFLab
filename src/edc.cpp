@@ -11,7 +11,7 @@ using namespace std;
 namespace X {
     namespace EDC {
         template<typename T, xsize D0, xsize D1, xsize LEVS> 
-            void calEDC(DataIndex2<T,D0,D1>& input, DataIndex1<T,D0>& x, DataIndex1<T,D1>& y, T kappa, DataIndex2<T,D0,D1>& output, DataIndex1<T,LEVS>& conc, Index1<T,LEVS>& edc) {
+            void calEDC(DataIndex2<T,D0,D1>& input, DataIndex1<T,D0>& x, DataIndex1<T,D1>& y, T kappa, DataIndex2<T,D0,D1>& output, DataIndex1<T,LEVS>& conc, Index1<T,LEVS>& edc, bool div_by_area) {
                 DataIndex2<T,D0,D1> dA;
                 DataIndex2<T,D0,D1> grad_square;
                 DataIndex2<T,D0,D1> grid_input;
@@ -91,30 +91,36 @@ namespace X {
                     dIdC(static_cast<xsize>(grid_input(i,j))) += grad_square(i,j) * dA(i,j) * kappa;
                 });
 
-                
                 //cout << "Integrating area... " << flush;
                 // integrate area
                 for(xsize i = 0; i < LEVS; ++i) {
                     xsize j = LEVS - i - 1;
                     if(j == LEVS - 1) {
-                        AC(j) = 0;
+                        AC(j) = dAdC(j);
                     } else {
                         AC(j) = AC(j+1) + dAdC(j);
                     }
                 }
                 
-                AC *= 4 * M_PI;
-
                 //cout << "Calculate edc... " << flush;
             
                 T sum_dAdC = 0;
                 // calculate edc
-                enu_levs.each_index([&](xsize i) {
-                    edc(i) = dAdC(i) * dIdC(i) / (AC(i) * (dc*dc));
-                    conc(i) = min + i * dc;
-                    sum_dAdC += dAdC(i);
-                    //cout << "edc(" << i << ") = " << edc(i) << endl;
-                });
+
+                if(div_by_area == true) {
+                    enu_levs.each_index([&](xsize i) {
+                        edc(i) = dAdC(i) * dIdC(i) / (AC(i) * (dc*dc));
+                        conc(i) = min + i * dc;
+                        sum_dAdC += dAdC(i);
+                    });
+                } else {
+                    enu_levs.each_index([&](xsize i) {
+                        edc(i) = dAdC(i) * dIdC(i) / ((dc*dc));
+                        conc(i) = min + i * dc;
+                        sum_dAdC += dAdC(i);
+                    });
+                
+                }
                 //cout << sum_dAdC ;
                 //cout << "done." << endl;
                 enu_data.each_index([&](xsize i, xsize j) {

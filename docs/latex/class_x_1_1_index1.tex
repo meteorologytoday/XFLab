@@ -1,6 +1,15 @@
 \hypertarget{class_x_1_1_index1}{\section{X\-:\-:Index1$<$ T, N $>$ Class Template Reference}
 \label{class_x_1_1_index1}\index{X\-::\-Index1$<$ T, N $>$@{X\-::\-Index1$<$ T, N $>$}}
 }
+
+
+This class is the class for 1-\/dimensional index.  
+
+
+
+
+{\ttfamily \#include $<$index\-\_\-1.\-h$>$}
+
 Inheritance diagram for X\-:\-:Index1$<$ T, N $>$\-:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,15 +22,55 @@ Inheritance diagram for X\-:\-:Index1$<$ T, N $>$\-:\begin{figure}[H]
 \hypertarget{class_x_1_1_index1_a1a3384046f034e8c7abb66f33e06872d}{{\bfseries Index1} (T $\ast$data)}\label{class_x_1_1_index1_a1a3384046f034e8c7abb66f33e06872d}
 
 \item 
-\hypertarget{class_x_1_1_index1_a2d876d68fd4b7248660909862d2fd66b}{virtual T \& {\bfseries operator()} (xsize i)}\label{class_x_1_1_index1_a2d876d68fd4b7248660909862d2fd66b}
-
+virtual T \& \hyperlink{class_x_1_1_index1_a2d876d68fd4b7248660909862d2fd66b}{operator()} (xsize i)
 \item 
-\hypertarget{class_x_1_1_index1_af340b1faa1a33473a9a1f972e1a2f7a1}{virtual T \& {\bfseries operator\mbox{[}$\,$\mbox{]}} (xsize i)}\label{class_x_1_1_index1_af340b1faa1a33473a9a1f972e1a2f7a1}
-
+virtual T \& \hyperlink{class_x_1_1_index1_af340b1faa1a33473a9a1f972e1a2f7a1}{operator\mbox{[}$\,$\mbox{]}} (xsize i)
 \end{DoxyCompactItemize}
-\subsubsection*{template$<$typename T, xsize N$>$ class X\-::\-Index1$<$ T, N $>$}
 
 
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename T, xsize N$>$class X\-::\-Index1$<$ T, N $>$}
+
+This class is the class for 1-\/dimensional index. 
+
+\begin{DoxyAuthor}{Author}
+Hsu, Tien-\/\-Yiao 
+\end{DoxyAuthor}
+\begin{DoxyCopyright}{Copyright}
+N\-T\-U\-A\-S D\-M\-Lab 
+\end{DoxyCopyright}
+\begin{DoxyDate}{Date}
+2013/04/27 
+\end{DoxyDate}
+\begin{DoxyVersion}{Version}
+1.\-0 
+\end{DoxyVersion}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_x_1_1_index1_a2d876d68fd4b7248660909862d2fd66b}{\index{X\-::\-Index1@{X\-::\-Index1}!operator()@{operator()}}
+\index{operator()@{operator()}!X::Index1@{X\-::\-Index1}}
+\subsubsection[{operator()}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, xsize N$>$ virtual T\& {\bf X\-::\-Index1}$<$ T, N $>$\-::operator() (
+\begin{DoxyParamCaption}
+\item[{xsize}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_x_1_1_index1_a2d876d68fd4b7248660909862d2fd66b}
+Using \hyperlink{class_x_1_1_data_index1}{Data\-Index1} as an example\-: 
+\begin{DoxyCode}
+ {.cpp}
+ DataIndex1<float,10> data;
+ data(0) = 1.0;
+\end{DoxyCode}
+
+
+Note that this function returns left-\/value. \hypertarget{class_x_1_1_index1_af340b1faa1a33473a9a1f972e1a2f7a1}{\index{X\-::\-Index1@{X\-::\-Index1}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!X::Index1@{X\-::\-Index1}}
+\subsubsection[{operator[]}]{\setlength{\rightskip}{0pt plus 5cm}template$<$typename T, xsize N$>$ virtual T\& {\bf X\-::\-Index1}$<$ T, N $>$\-::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{xsize}]{i}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}\label{class_x_1_1_index1_af340b1faa1a33473a9a1f972e1a2f7a1}
+Same as \hyperlink{class_x_1_1_index1_a2d876d68fd4b7248660909862d2fd66b}{operator()(xsize)}. 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
 \item 

@@ -72,6 +72,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
       <li><a href="annotated.html"><span>Class&#160;List</span></a></li>
       <li><a href="classes.html"><span>Class&#160;Index</span></a></li>
       <li><a href="hierarchy.html"><span>Class&#160;Hierarchy</span></a></li>
+      <li><a href="functions.html"><span>Class&#160;Members</span></a></li>
     </ul>
   </div>
 <!-- window showing the filter options -->
@@ -79,7 +80,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Functions</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -102,13 +103,18 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">X::Data&lt; T, N &gt; Class Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p>This class is the base class for all the data.  
+ <a href="class_x_1_1_data.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="data_8h_source.html">data.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for X::Data&lt; T, N &gt;:</div>
 <div class="dyncontent">
  <div class="center">
   <img src="class_x_1_1_data.png" usemap="#X::Data&lt; T, N &gt;_map" alt=""/>
   <map id="X::Data&lt; T, N &gt;_map" name="X::Data&lt; T, N &gt;_map">
-<area href="class_x_1_1_data_index1.html" alt="X::DataIndex1&lt; T, N &gt;" shape="rect" coords="0,56,139,80"/>
+<area href="class_x_1_1_data_index1.html" title="This class is for 1-dimensional data." alt="X::DataIndex1&lt; T, N &gt;" shape="rect" coords="0,56,139,80"/>
 </map>
  </div></div>
 
@@ -116,18 +122,12 @@ Inheritance diagram for X::Data&lt; T, N &gt;:</div>
 <table class="memberdecls">
 <tr><td colspan="2"><h2><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1c0ad8ff192c0c3d8d7f46bf5b988180"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a1c0ad8ff192c0c3d8d7f46bf5b988180"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Data</b> (T *)</td></tr>
-<tr class="memitem:a085e20937e473698958910dfe31780aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a085e20937e473698958910dfe31780aa"></a>
-T *&#160;</td><td class="memItemRight" valign="bottom"><b>getDataPointer</b> ()</td></tr>
-<tr class="memitem:ac3fd035b3814e662ef527a00034f947d"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac3fd035b3814e662ef527a00034f947d"></a>
-T *&#160;</td><td class="memItemRight" valign="bottom"><b>p</b> ()</td></tr>
-<tr class="memitem:a9a0a3e674daebe2750d8d7f233e7d0ce"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a9a0a3e674daebe2750d8d7f233e7d0ce"></a>
-T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>getData</b> (xsize i)</td></tr>
-<tr class="memitem:a61f4210d3c61a8f08d7f85d52e2bf532"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a61f4210d3c61a8f08d7f85d52e2bf532"></a>
-xsize&#160;</td><td class="memItemRight" valign="bottom"><b>getSize</b> ()</td></tr>
-<tr class="memitem:ac9e98c6fbdfdd23b664e6ac610fd672a"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ac9e98c6fbdfdd23b664e6ac610fd672a"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>copyData</b> (<a class="el" href="class_x_1_1_data.html">Data</a>&lt; T, N &gt; &amp;data)</td></tr>
+<tr class="memitem:a9ad5f351292008abe819ecaad1e3c94d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_1_1_data.html#a9ad5f351292008abe819ecaad1e3c94d">Data</a> ()</td></tr>
+<tr class="memitem:a2b21e425670199f07a7e264b24f69214"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_1_1_data.html#a2b21e425670199f07a7e264b24f69214">~Data</a> ()</td></tr>
+<tr class="memitem:a085e20937e473698958910dfe31780aa"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_1_1_data.html#a085e20937e473698958910dfe31780aa">getDataPointer</a> ()</td></tr>
+<tr class="memitem:ac3fd035b3814e662ef527a00034f947d"><td class="memItemLeft" align="right" valign="top">T *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_1_1_data.html#ac3fd035b3814e662ef527a00034f947d">p</a> ()</td></tr>
+<tr class="memitem:a9a0a3e674daebe2750d8d7f233e7d0ce"><td class="memItemLeft" align="right" valign="top">T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_1_1_data.html#a9a0a3e674daebe2750d8d7f233e7d0ce">getData</a> (xsize i)</td></tr>
+<tr class="memitem:ac9e98c6fbdfdd23b664e6ac610fd672a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_x_1_1_data.html#ac9e98c6fbdfdd23b664e6ac610fd672a">copyData</a> (<a class="el" href="class_x_1_1_data.html">Data</a>&lt; T, N &gt; &amp;data)</td></tr>
 <tr class="memitem:a8c1665070bafded63fcd3bc3f7afbff2"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a8c1665070bafded63fcd3bc3f7afbff2"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>operator+=</b> (<a class="el" href="class_x_1_1_data.html">Data</a>&lt; T, N &gt; &amp;B)</td></tr>
 <tr class="memitem:a53b2f3843000d2f71386a02644e40784"><td class="memTemplParams" colspan="2"><a class="anchor" id="a53b2f3843000d2f71386a02644e40784"></a>
@@ -149,9 +149,134 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>operator/=</b> (<a cl
 template&lt;typename B &gt; </td></tr>
 <tr class="memitem:a78a26985cb6596c9d9e475f54887bbe3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><b>operator/=</b> (B b)</td></tr>
 </table>
-<h3>template&lt;typename T, xsize N&gt;<br/>
- class X::Data&lt; T, N &gt;</h3>
+<hr/><a name="details" id="details"></a><h2>Detailed Description</h2>
+<div class="textblock"><h3>template&lt;typename T, xsize N&gt;<br/>
+class X::Data&lt; T, N &gt;</h3>
 
+<p>This class is the base class for all the data. </p>
+<dl class="section author"><dt>Author:</dt><dd>Hsu, Tien-Yiao </dd></dl>
+<dl class="section copyright"><dt>Copyright:</dt><dd>NTUAS DMLab </dd></dl>
+<dl class="section date"><dt>Date:</dt><dd>2013/04/27 </dd></dl>
+<dl class="section version"><dt>Version:</dt><dd>1.0</dd></dl>
+<p><a class="el" href="class_x_1_1_data.html" title="This class is the base class for all the data.">Data</a> needs to be specified its data type and number of elements. #data </p>
+</div><hr/><h2>Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="a9ad5f351292008abe819ecaad1e3c94d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, xsize N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_x_1_1_data.html">X::Data</a>&lt; T, N &gt;::<a class="el" href="class_x_1_1_data.html">Data</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Initialize an array of N elements with type T. They are all with default initialized value. </p>
+
+</div>
+</div>
+<a class="anchor" id="a2b21e425670199f07a7e264b24f69214"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, xsize N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_x_1_1_data.html">X::Data</a>&lt; T, N &gt;::~<a class="el" href="class_x_1_1_data.html">Data</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Deconstructor frees all the heap memory of the object. </p>
+
+</div>
+</div>
+<hr/><h2>Member Function Documentation</h2>
+<a class="anchor" id="ac9e98c6fbdfdd23b664e6ac610fd672a"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, xsize N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="class_x_1_1_data.html">X::Data</a>&lt; T, N &gt;::<a class="el" href="class_x_1_1_data.html#ac9e98c6fbdfdd23b664e6ac610fd672a">copyData</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="class_x_1_1_data.html">Data</a>&lt; T, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Copies the value of another data. </p>
+
+</div>
+</div>
+<a class="anchor" id="a9a0a3e674daebe2750d8d7f233e7d0ce"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, xsize N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T&amp; <a class="el" href="class_x_1_1_data.html">X::Data</a>&lt; T, N &gt;::<a class="el" href="class_x_1_1_data.html#a9a0a3e674daebe2750d8d7f233e7d0ce">getData</a> </td>
+          <td>(</td>
+          <td class="paramtype">xsize&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Get the i-th element of the data. </p>
+
+</div>
+</div>
+<a class="anchor" id="a085e20937e473698958910dfe31780aa"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, xsize N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="class_x_1_1_data.html">X::Data</a>&lt; T, N &gt;::<a class="el" href="class_x_1_1_data.html#a085e20937e473698958910dfe31780aa">getDataPointer</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Return the pointer of the data </p>
+
+</div>
+</div>
+<a class="anchor" id="ac3fd035b3814e662ef527a00034f947d"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T, xsize N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T* <a class="el" href="class_x_1_1_data.html">X::Data</a>&lt; T, N &gt;::<a class="el" href="class_x_1_1_data.html#ac3fd035b3814e662ef527a00034f947d">p</a> </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td><code> [inline]</code></td>
+        </tr>
+      </table>
+</div>
+<div class="memdoc">
+<p>Abbreviation for <a class="el" href="class_x_1_1_data.html#a085e20937e473698958910dfe31780aa">getDataPointer()</a> </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/<a class="el" href="data_8h_source.html">data.h</a></li>
 </ul>
@@ -159,7 +284,7 @@ template&lt;typename B &gt; </td></tr>
 
 
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Apr 2 2013 13:30:10 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Apr 29 2013 15:11:24 for XDMLab Project by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.0
 </small></address>
