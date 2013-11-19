@@ -1,6 +1,8 @@
 
 #ifndef X_DATA_H
 #define X_DATA_H
+
+#include <iostream>
 namespace X {
 
 
@@ -38,17 +40,30 @@ namespace X {
                 /*!
                  *  Copies the value of another data.
                  */
-                inline void copyData(Data<T,N>& data) { for(xsize i=0; i < N; ++i) (this->getData(i)) = data.getData(i); }
+                inline void copyData(Data<T,N>& data) {
+					for(xsize i=0; i < N; ++i) (this->getData(i)) = data.getData(i); 
+				}
 
             public:
-                inline void operator+=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] += (B.getDataPointer())[i]; }
-                template <typename B> inline void operator+=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] += static_cast<T>(b); } 
-                inline void operator-=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] -= (B.getDataPointer())[i]; }
-                template <typename B> inline void operator-=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] -= static_cast<T>(b); } 
-                inline void operator*=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] *= (B.getDataPointer())[i]; }
-                template <typename B> inline void operator*=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] *= static_cast<T>(b); } 
-                inline void operator/=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] /= (B.getDataPointer())[i]; }
-                template <typename B> inline void operator/=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] /= static_cast<T>(b); } 
+                inline Data<T,N>& operator=(Data<T,N>& B) { 
+					std::cout << "Why ?" << std::endl;
+					this->copyData(B);	
+					return *this;
+				} // Danger, probably gcc compiler bug .
+
+                template <typename B> inline Data<T,N>& operator=(B b) {for(xsize i=0; i < N; ++i) (this->data)[i] = static_cast<T>(b); return *this;} 
+
+				inline Data<T,N>& operator+=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] += (B.getDataPointer())[i]; }
+                template <typename B> inline Data<T,N>& operator+=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] += static_cast<T>(b); }
+
+                inline Data<T,N>& operator-=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] -= (B.getDataPointer())[i]; }
+                template <typename B> inline Data<T,N>& operator-=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] -= static_cast<T>(b); } 
+
+                inline Data<T,N>& operator*=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] *= (B.getDataPointer())[i]; }
+                template <typename B> inline Data<T,N>& operator*=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] *= static_cast<T>(b); } 
+
+                inline Data<T,N>& operator/=(Data<T,N>& B) {  for(xsize i=0; i < N; ++i) (this->data)[i] /= (B.getDataPointer())[i]; }
+                template <typename B> inline Data<T,N>& operator/=(B b) {  for(xsize i=0; i < N; ++i) (this->data)[i] /= static_cast<T>(b); } 
         };
 }
 

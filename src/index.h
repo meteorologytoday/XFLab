@@ -1,5 +1,6 @@
 #ifndef X_INDEX_H
 #define X_INDEX_H
+#include <iostream>
 namespace X {
 
     

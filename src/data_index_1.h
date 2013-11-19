@@ -30,7 +30,12 @@ namespace X {
                 DataIndex1();
                 DataIndex1(T*);
                 ~DataIndex1();
-           
+
+	 		   using Data<T,N>::operator=;			
+	 		   using Data<T,N>::operator+=;
+	 		   using Data<T,N>::operator-=;
+	 		   using Data<T,N>::operator*=;
+	 		   using Data<T,N>::operator/=;
                using Index1<T,N>::operator();
         };
 

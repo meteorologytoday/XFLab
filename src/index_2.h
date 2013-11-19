@@ -6,6 +6,7 @@
 #include "index.h"
 #include "typedef.h"
 #include "offset.h"
+#include <iostream>
 namespace X {
     
     /*! 
