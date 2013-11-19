@@ -40,9 +40,13 @@ namespace X {
                 /*!
                  *  Copies the value of another data.
                  */
+<<<<<<< HEAD
                 inline void copyData(Data<T,N>& data) {
 					for(xsize i=0; i < N; ++i) (this->getData(i)) = data.getData(i); 
 				}
+=======
+                inline void copyData(Data<T,N>& data) { for(xsize i=0; i < N; ++i) (this->getData(i)) = data.getData(i); }
+>>>>>>> d2cf62167f0c870455452afb360885636b78887e
 
             public:
                 inline Data<T,N>& operator=(Data<T,N>& B) { 
