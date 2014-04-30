@@ -24,7 +24,7 @@
 
 #ifdef X_INCLUDE_FFTW
 // fftw expansion
-#include "fftw_magic.h"
+#include "fftw/fftw_magic.h"
 #endif
 
 #ifdef X_INCLUDE_GNUPLOT
