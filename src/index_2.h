@@ -28,6 +28,17 @@ namespace X {
                 ~Index2() {}
             
             public:
+
+                /*!
+                 * Using DataIndex2 as an example:
+                 * \code{.cpp}
+                 * DataIndex1<float,10,10> data;
+                 * data(0,0) = 1.0;
+                 * \endcode
+                 *
+                 * Note that this function returns left-value.
+                 *
+                 */
                 inline virtual T& operator()(xsize i, xsize j) {
                     return this->getTargetDataPointer()[OFFSET2(N1,N2,i,j)];
                 }

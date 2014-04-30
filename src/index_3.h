@@ -22,6 +22,17 @@ namespace X {
         class Index3 : public Index<T> {
             private:
             public:
+
+        /*!
+         * Using DataIndex3 as an example:
+         * \code{.cpp}
+         * DataIndex3<float,10,10,10> data;
+         * data(0,0,0) = 1.0;
+         * \endcode
+         *
+         * Note that this function returns left-value.
+         *
+         */
                 Index3() {}
                 Index3(T* data) {this->setTargetDataPointer(data);}
                 ~Index3() {}
